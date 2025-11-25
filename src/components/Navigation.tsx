@@ -20,6 +20,13 @@ const Navigation = () => {
           >
             Home
           </NavLink>
+          <NavLink 
+            to="/training" 
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            activeClassName="text-primary"
+          >
+            Training
+          </NavLink>
           <a 
             href="#services" 
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
