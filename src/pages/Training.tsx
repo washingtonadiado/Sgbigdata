@@ -1,41 +1,95 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Users, Award, Clock, CheckCircle2 } from "lucide-react";
+import { Star, Clock, Users, BarChart } from "lucide-react";
+import courseDataAnalytics from "@/assets/course-data-analytics.jpg";
+import courseAiMl from "@/assets/course-ai-ml.jpg";
+import courseGovernance from "@/assets/course-governance.jpg";
+import coursePython from "@/assets/course-python.jpg";
+import courseBi from "@/assets/course-bi.jpg";
+import courseEtl from "@/assets/course-etl.jpg";
 
 const Training = () => {
-  const programs = [
+  const courses = [
     {
+      id: 1,
       title: "Data Analytics Fundamentals",
-      duration: "4 weeks",
+      instructor: "Dr. Sarah Kimani",
+      thumbnail: courseDataAnalytics,
+      price: "KES 15,000",
+      originalPrice: "KES 25,000",
+      rating: 4.8,
+      students: 2340,
+      duration: "8 weeks",
       level: "Beginner",
       description: "Master the basics of data analysis, visualization, and statistical thinking for business decisions.",
-      topics: ["Data Collection", "Excel & SQL", "Data Visualization", "Statistical Analysis"],
     },
     {
-      title: "Advanced Analytics & AI",
-      duration: "8 weeks",
+      id: 2,
+      title: "Advanced AI & Machine Learning",
+      instructor: "Prof. James Omondi",
+      thumbnail: courseAiMl,
+      price: "KES 35,000",
+      originalPrice: "KES 50,000",
+      rating: 4.9,
+      students: 1890,
+      duration: "12 weeks",
       level: "Advanced",
-      description: "Learn predictive modeling, machine learning, and AI implementation for enterprise solutions.",
-      topics: ["Machine Learning", "Predictive Analytics", "AI Integration", "Model Deployment"],
+      description: "Learn predictive modeling, deep learning, and AI implementation for enterprise solutions.",
     },
     {
+      id: 3,
       title: "Data Governance & Compliance",
-      duration: "3 weeks",
+      instructor: "Mary Wanjiru",
+      thumbnail: courseGovernance,
+      price: "KES 20,000",
+      originalPrice: "KES 30,000",
+      rating: 4.7,
+      students: 1560,
+      duration: "6 weeks",
       level: "Intermediate",
-      description: "Understand data protection laws, GDPR, and Kenya's Data Protection Act with practical implementation.",
-      topics: ["GDPR Compliance", "Data Protection Act", "Privacy Management", "Security Best Practices"],
+      description: "Understand GDPR, Kenya's Data Protection Act, and implement robust data governance frameworks.",
     },
-  ];
-
-  const benefits = [
-    "Hands-on projects with real-world datasets",
-    "Certificate of completion recognized across East Africa",
-    "Lifetime access to course materials and updates",
-    "Expert instructors with industry experience",
-    "Flexible learning schedules (online & in-person)",
-    "Career support and networking opportunities",
+    {
+      id: 4,
+      title: "Python for Data Science",
+      instructor: "David Mutua",
+      thumbnail: coursePython,
+      price: "KES 18,000",
+      originalPrice: "KES 28,000",
+      rating: 4.9,
+      students: 3120,
+      duration: "10 weeks",
+      level: "Beginner",
+      description: "Complete Python programming course covering pandas, NumPy, and data manipulation techniques.",
+    },
+    {
+      id: 5,
+      title: "Business Intelligence & Reporting",
+      instructor: "Grace Achieng",
+      thumbnail: courseBi,
+      price: "KES 22,000",
+      originalPrice: "KES 32,000",
+      rating: 4.6,
+      students: 1780,
+      duration: "8 weeks",
+      level: "Intermediate",
+      description: "Build interactive dashboards and KPI reports using Power BI, Tableau, and advanced Excel.",
+    },
+    {
+      id: 6,
+      title: "Data Warehousing & ETL",
+      instructor: "Michael Otieno",
+      thumbnail: courseEtl,
+      price: "KES 28,000",
+      originalPrice: "KES 40,000",
+      rating: 4.8,
+      students: 1420,
+      duration: "10 weeks",
+      level: "Advanced",
+      description: "Design and implement data warehouses, ETL pipelines, and cloud data infrastructure.",
+    },
   ];
 
   return (
@@ -43,76 +97,98 @@ const Training = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-hero via-background to-navy/20">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-hero via-background to-navy/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <Award className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">Professional Training Programs</span>
-            </div>
+          <div className="max-w-4xl">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
-              Transform Your Team with <span className="text-primary">Data Excellence</span>
+              Professional Data Training <span className="text-primary">Courses</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Empower your organization with cutting-edge data skills through our comprehensive training programs designed for African businesses.
+            <p className="text-xl text-muted-foreground mb-8">
+              Learn from industry experts and transform your career with practical, hands-on courses designed for African businesses.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="rounded-full">
-                Enroll Now
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full">
-                Download Brochure
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Training Programs */}
-      <section className="py-20 bg-background">
+      {/* Courses Grid */}
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Our Training Programs
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Structured learning paths designed to take you from fundamentals to advanced data expertise
-            </p>
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold text-foreground mb-2">All Courses</h2>
+            <p className="text-muted-foreground">Choose from {courses.length} professional courses</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {programs.map((program, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {courses.map((course) => (
               <Card 
-                key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                key={course.id}
+                className="overflow-hidden border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer group"
               >
-                <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                      {program.level}
-                    </span>
-                    <div className="flex items-center gap-1 text-muted-foreground">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm">{program.duration}</span>
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={course.thumbnail} 
+                    alt={course.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-3 right-3 px-3 py-1 bg-secondary/90 backdrop-blur-sm rounded-full text-xs font-bold text-secondary-foreground">
+                    {course.level}
+                  </div>
+                </div>
+                
+                <CardContent className="p-4">
+                  <h3 className="text-lg font-bold text-foreground mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                    {course.title}
+                  </h3>
+                  
+                  <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                    {course.description}
+                  </p>
+                  
+                  <p className="text-xs text-muted-foreground mb-3">
+                    {course.instructor}
+                  </p>
+                  
+                  <div className="flex items-center gap-4 mb-3 text-xs text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-3 h-3" />
+                      <span>{course.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <Users className="w-3 h-3" />
+                      <span>{course.students.toLocaleString()}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <BarChart className="w-3 h-3" />
+                      <span>{course.level}</span>
                     </div>
                   </div>
-                  <CardTitle className="text-2xl mb-2">{program.title}</CardTitle>
-                  <p className="text-muted-foreground">{program.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <h4 className="font-semibold text-sm text-foreground">Key Topics:</h4>
-                    <ul className="space-y-2">
-                      {program.topics.map((topic, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-sm">
-                          <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                          <span className="text-muted-foreground">{topic}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm font-bold text-foreground">{course.rating}</span>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-3 h-3 ${i < Math.floor(course.rating) ? 'fill-secondary text-secondary' : 'text-muted'}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <span className="text-xs text-muted-foreground">
+                      ({course.students.toLocaleString()} students)
+                    </span>
                   </div>
-                  <Button className="w-full mt-6 rounded-full" variant="outline">
-                    Learn More
+                  
+                  <div className="flex items-center justify-between pt-3 border-t border-border">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-2xl font-bold text-foreground">{course.price}</span>
+                      <span className="text-sm text-muted-foreground line-through">{course.originalPrice}</span>
+                    </div>
+                  </div>
+                  
+                  <Button className="w-full mt-4 rounded-full" size="sm">
+                    Enroll Now
                   </Button>
                 </CardContent>
               </Card>
@@ -121,56 +197,22 @@ const Training = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-navy text-foreground">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Why Choose Our Training?
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Comprehensive learning experience designed for success
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
-                <div 
-                  key={index}
-                  className="flex items-start gap-4 p-6 rounded-lg bg-background/5 border border-border/20 hover:bg-background/10 transition-colors"
-                >
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                  </div>
-                  <p className="text-foreground font-medium pt-2">{benefit}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <Users className="w-8 h-8 text-primary" />
-              <BookOpen className="w-8 h-8 text-secondary" />
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Ready to Upskill Your Team?
+              Corporate Training Available
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Get in touch to discuss custom training programs tailored to your organization's needs
+              Get custom training programs for your team with volume discounts and tailored curriculum
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Button size="lg" className="rounded-full">
-                Schedule a Consultation
+                Request Group Pricing
               </Button>
               <Button size="lg" variant="outline" className="rounded-full">
-                Request Group Pricing
+                Schedule Consultation
               </Button>
             </div>
           </div>
