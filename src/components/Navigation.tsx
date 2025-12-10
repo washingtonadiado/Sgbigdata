@@ -41,12 +41,13 @@ const Navigation = () => {
           >
             About us
           </NavLink>
-          <a 
-            href="#contact" 
+          <NavLink 
+            to="/contact" 
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            activeClassName="text-primary"
           >
             Contact us
-          </a>
+          </NavLink>
         </div>
 
         <Button variant="default" size="lg" className="rounded-full">
