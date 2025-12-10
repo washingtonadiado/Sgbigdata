@@ -2,7 +2,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BookOpen, Users, Target, GraduationCap, Building2, User } from "lucide-react";
+import { BookOpen, Users, Target, GraduationCap, Building2, User, ChevronDown } from "lucide-react";
+
+import courseBi from "@/assets/course-bi.jpg";
+import courseDataAnalytics from "@/assets/course-data-analytics.jpg";
+import courseEtl from "@/assets/course-etl.jpg";
+import coursePython from "@/assets/course-python.jpg";
+import courseAiMl from "@/assets/course-ai-ml.jpg";
+import courseGovernance from "@/assets/course-governance.jpg";
 
 const Training = () => {
   const courses = [
@@ -10,7 +17,8 @@ const Training = () => {
       id: 1,
       title: "Data Analytics and Business Intelligence with Advanced Excel and Power BI",
       level: "Foundation",
-      introduction: "This course equips participants to transform raw data into clear, actionable insights that drive smarter decisions across any organisation. Learn to clean, analyse, visualise, and model data using Excel's advanced features and Power BI's dynamic, real-time analytics. Through hands-on projects and real-world case studies, participants build insightful dashboards, apply core analytical techniques, and enable self-service analytics that boost efficiency and decision-making across the business.",
+      thumbnail: courseBi,
+      introduction: "This course equips participants to transform raw data into clear, actionable insights that drive smarter decisions across any organisation. Learn to clean, analyse, visualise, and model data using Excel’s advanced features and Power BI’s dynamic, real-time analytics. Through hands-on projects and real-world case studies, participants build insightful dashboards, apply core analytical techniques, and enable self-service analytics that boost efficiency and decision-making across the business.",
       whoShouldAttend: [
         "Professionals seeking to build or strengthen their skills in data analytics using Microsoft Excel and Power BI",
         "Business analysts, M&E officers, administrators, and managers",
@@ -54,6 +62,7 @@ const Training = () => {
       id: 2,
       title: "Data Analysis & Trend Monitoring Training Course",
       level: "Foundation",
+      thumbnail: courseDataAnalytics,
       introduction: "This intensive training programme equips professionals with the analytical skills needed to collect, interpret, and translate data into meaningful trends and insights. Participants gain hands-on experience with modern analytical tools, statistical methods, and visualization techniques that support evidence-based decision-making across sectors. By the end of the course, participants will be able to forecast outcomes, identify emerging patterns, and provide strategic recommendations grounded in data.",
       whoShouldAttend: [
         "Professionals working in monitoring & evaluation (M&E), research, planning, and strategy",
@@ -109,6 +118,7 @@ const Training = () => {
       title: "Data Collection, Analysis & Visualization Training",
       level: "Foundation to Intermediate",
       duration: "5 Days",
+      thumbnail: courseEtl,
       introduction: "This intensive 5-day training provides participants with end-to-end skills in digital data collection, statistical analysis, and data visualization using industry-standard tools including KoboToolbox, SPSS, Excel, SQL, and Power BI. Participants learn to design digital surveys, manage and analyze data efficiently, and present insights through professional dashboards and reports. Through practical exercises and real-world case studies, the course builds strong analytical capability for monitoring, evaluation, research, and decision-making roles.",
       whoShouldAttend: [
         "Monitoring & Evaluation (M&E) officers",
@@ -117,73 +127,46 @@ const Training = () => {
         "Data analysts, project managers, and field supervisors",
         "Anyone seeking practical expertise in digital data systems and analysis"
       ],
+      objectives: [],
       modules: [
         {
-          title: "DAY 1 — Monday: Course Introduction & Foundations",
+          title: "DAY 1 — Monday",
           topics: [
-            "Morning: Welcome, housekeeping, programme overview",
-            "Course objectives and expected outcomes",
-            "Introduction to KoboToolbox and mobile data collection systems",
-            "Survey Authoring Basics with Kobo Form Builder",
-            "Afternoon: Intermediate to Advanced KoboToolbox",
-            "Single-select & multi-select questions, group questions",
-            "Multimedia fields: GPS, photo, audio, video",
-            "Skip logic, validation rules, repeat groups, dynamic choice filters",
-            "Deployment and collecting data on mobile devices"
+            "Morning: Course Introduction & Foundations (Welcome, housekeeping, programme overview, Course objectives and expected outcomes)",
+            "Introduction to KoboToolbox & mobile data collection systems",
+            "Survey Authoring Basics (Kobo Form Builder overview, Designing simple questions)",
+            "Afternoon: Intermediate to Advanced KoboToolbox (Single-select & multi-select questions, Group questions, Multimedia fields, Calculations, notes, decimals)",
+            "Advanced Authoring Techniques (Skip logic, validation rules, repeat groups, dynamic choice filters, metadata)",
+            "Deployment (Collecting data on mobile devices, Reviewing, editing, and deploying forms)"
           ]
         },
         {
-          title: "DAY 2 — Tuesday: Advanced Kobo & Data Management",
+          title: "DAY 2 — Tuesday",
           topics: [
-            "Morning: Editing & exporting Kobo data (reports, tables, media, maps)",
-            "Approving submissions and real-world project case study",
-            "Introduction to SPSS interface overview",
-            "Importing & exporting datasets (Excel, CSV, text formats)",
-            "Afternoon: SPSS Data Management",
-            "Entering & organizing data, defining and labeling variables",
-            "Handling missing values & outliers",
-            "Merging, splitting, sorting datasets",
-            "Using SPSS syntax for efficient data manipulation"
+            "Morning: Advanced Kobo & Data Management (Recap of Day 1, Editing & exporting Kobo data, Approving submissions, Real-world project case study)",
+            "Introduction to SPSS (SPSS interface overview, Importing & exporting datasets)",
+            "Afternoon: SPSS Data Management (Entering & organizing data, Defining and labeling variables, Handling missing values & outliers, Merging, splitting, sorting datasets, Using SPSS syntax)"
           ]
         },
         {
-          title: "DAY 3 — Wednesday: Descriptive Statistics & Exploration",
+          title: "DAY 3 — Wednesday",
           topics: [
-            "Morning: Frequency tables & summary statistics",
-            "Measures of central tendency and variation",
-            "Cross-tabulations and visual binning",
-            "Afternoon: Data Transformation & Visualization",
-            "Recoding variables, creating computed fields",
-            "Data cleaning workflows",
-            "Histograms, bar charts, scatter plots, boxplots in SPSS",
-            "Best practices in data presentation"
+            "Morning: Descriptive Statistics & Exploration (Frequency tables & summary statistics, Measures of central tendency and variation, Cross-tabulations, Visual binning)",
+            "Afternoon: Data Transformation & Visualization (Recoding variables, Creating computed fields, Data cleaning workflows, Data Visualization in SPSS, Best practices in data presentation)"
           ]
         },
         {
-          title: "DAY 4 — Thursday: Inferential Statistics & Hypothesis Testing",
+          title: "DAY 4 — Thursday",
           topics: [
-            "Morning: T-tests (one-sample, independent, paired)",
-            "ANOVA & post-hoc tests, correlation analysis",
-            "Simple & multiple regression",
-            "Non-parametric tests (chi-square, Mann-Whitney U, Kruskal-Wallis)",
-            "Afternoon: Advanced Modeling & Multivariate Analysis",
-            "Logistic & ordinal regression, factor analysis & PCA",
-            "Cluster analysis, reliability testing (Cronbach's Alpha)",
-            "Handling survey data (Likert scales, weights, complex samples)"
+            "Morning: Inferential Statistics & Hypothesis Testing (T-tests, ANOVA, Correlation analysis, Simple & multiple regression, Non-parametric tests)",
+            "Afternoon: Advanced Modeling & Multivariate Analysis (Logistic & ordinal regression, Factor analysis & PCA, Cluster analysis, Reliability testing, Handling survey data, Time-series & longitudinal techniques, Automating analysis)"
           ]
         },
         {
-          title: "DAY 5 — Friday: Data Handling & Visualization",
+          title: "DAY 5 — Friday",
           topics: [
-            "Morning: Excel for Data Analysis",
-            "Data structures, formats, cleaning & exploration",
-            "Pivot tables & pivot charts",
-            "SQL for Data Exploration: querying, filtering, aggregating, joining datasets",
-            "Afternoon: Data Visualization with Power BI",
-            "Introduction to Power BI ecosystem",
-            "Importing data, creating core visuals",
-            "Using filters, slicers, and interactions",
-            "Designing simple dashboards for reporting"
+            "Morning: Data Handling & Exploration (Excel for Data Analysis, SQL for Data Exploration)",
+            "Afternoon: Data Visualization with Power BI (Introduction to the Power BI ecosystem, Importing data, Creating core visuals, Using filters, slicers, and interactions, Designing simple dashboards)"
           ]
         }
       ]
@@ -193,7 +176,8 @@ const Training = () => {
       title: "Sales Analytics, Data Visualization & Dashboarding with Advanced Excel",
       level: "Intermediate",
       duration: "5 Days",
-      introduction: "This intensive 5-day programme equips participants with the skills to transform raw sales data into meaningful, actionable insights using Advanced Excel. The course blends sales analytics foundations, hands-on data transformation, advanced Excel functions, and modern dashboard-building techniques to help professionals interpret trends, optimise performance, and support strategic decision-making. Participants will learn how to prepare, analyse, and visualise sales data using Excel's advanced capabilities—pivot tables, lookup functions, dynamic arrays, automation (macros/VBA), and intuitive dashboard design.",
+      thumbnail: courseDataAnalytics,
+      introduction: "This intensive 5-day programme equips participants with the skills to transform raw sales data into meaningful, actionable insights using Advanced Excel. The course blends sales analytics foundations, hands-on data transformation, advanced Excel functions, and modern dashboard-building techniques to help professionals interpret trends, optimise performance, and support strategic decision-making. Participants will learn how to prepare, analyse, and visualise sales data using Excel’s advanced capabilities—pivot tables, lookup functions, dynamic arrays, automation (macros/VBA), and intuitive dashboard design.",
       whoShouldAttend: [
         "Sales Managers",
         "Business Analysts",
@@ -249,8 +233,9 @@ const Training = () => {
     {
       id: 5,
       title: "GIS Mapping & Spatial Analysis Using QGIS, R, and Power BI",
-      level: "Intermediate to Advanced",
       duration: "6 Days",
+      level: "Intermediate to Advanced",
+      thumbnail: courseGovernance, // Placeholder
       introduction: "This intensive, hands-on course equips professionals with the GIS, analytical, and visualization skills needed to support data-driven decision-making in humanitarian, development, and public-sector programs. The first half focuses on QGIS, where participants learn how to manage spatial datasets, conduct geospatial analysis, and produce professional-grade maps. The second half transitions to R and Power BI, enabling participants to analyze spatial and survey data, build interactive visualizations, and develop dashboards designed for monitoring, evaluation, and program reporting.",
       whoShouldAttend: [
         "GIS Officers and M&E Specialists",
@@ -262,7 +247,7 @@ const Training = () => {
       personalImpact: [
         "Gain practical competence in handling, analysing, and visualizing spatial and survey data",
         "Build proficiency in QGIS, R, and Power BI for multi-platform workflows",
-        "Strengthen ability to interpret and communicate spatial trends",
+        "Strengthen their ability to interpret and communicate spatial trends",
         "Develop real-world outputs: maps, dashboards, and analytical reports"
       ],
       organizationalImpact: [
@@ -310,7 +295,8 @@ const Training = () => {
       id: 6,
       title: "Applied Econometrics for Macroeconomics & Finance Training Course",
       level: "Foundation",
-      introduction: "This practical, hands-on course provides participants with a robust understanding of applied econometrics in macroeconomic and financial contexts. Designed for professionals working with economic and financial data, the program teaches participants how to apply econometric methods to analyze trends, model relationships, test economic theories, and generate reliable forecasts. The course covers core econometric topics including regression modeling, time series analysis, panel data techniques, volatility modeling, and forecasting.",
+      thumbnail: courseDataAnalytics, // Placeholder
+      introduction: "This practical, hands-on course provides participants with a robust understanding of applied econometrics in macroeconomic and financial contexts. Designed for professionals working with economic and financial data, the program teaches participants how to apply econometric methods to analyze trends, model relationships, test economic theories, and generate reliable forecasts. The course covers core econometric topics including regression modeling, time series analysis, panel data techniques, volatility modeling, and forecasting. Through real-world datasets and statistical software such as EViews and Stata, participants will conduct empirical research, interpret outputs, and make evidence-based decisions relevant to macroeconomic policy, financial markets, and economic strategy.",
       whoShouldAttend: [
         "Economists",
         "Financial Analysts",
@@ -322,7 +308,7 @@ const Training = () => {
       personalImpact: [
         "Develop strong skills in applied econometric analysis for macro and financial data",
         "Gain confidence conducting empirical research using statistical software",
-        "Improve ability to interpret econometric results for decision-making"
+        "Improve their ability to interpret econometric results for decision-making"
       ],
       organizationalImpact: [
         "Enhanced capacity for empirical economic analysis and modeling",
@@ -337,53 +323,24 @@ const Training = () => {
         "Use statistical software to conduct empirical analysis and generate insights"
       ],
       modules: [
-        {
-          title: "Module 1: Introduction to Econometrics for Macroeconomics and Finance",
-          topics: ["Overview of econometrics in macro and financial analysis", "Key econometric tools and concepts", "Introduction to EViews and Stata", "Practical: Importing and preparing macroeconomic data"]
-        },
-        {
-          title: "Module 2: Time Series Econometrics",
-          topics: ["Characteristics of macroeconomic and financial time series", "Testing for stationarity (ADF, KPSS)", "ARIMA and SARIMA modeling", "Case Study: Macroeconomic forecasting"]
-        },
-        {
-          title: "Module 3: Cointegration & Error Correction Models",
-          topics: ["Long-run economic relationships", "Estimating VECM models", "Practical: Cointegration testing with real macroeconomic data"]
-        },
-        {
-          title: "Module 4: Vector Autoregression (VAR) & Impulse Response Analysis",
-          topics: ["Building and estimating VAR models", "Impulse response and variance decomposition", "Applications in macroeconomic forecasting", "Case Study: Analyzing macroeconomic shocks"]
-        },
-        {
-          title: "Module 5: Volatility Modeling – ARCH & GARCH Models",
-          topics: ["Understanding volatility in financial markets", "Estimating ARCH/GARCH models", "Practical: Modeling and forecasting financial market volatility"]
-        },
-        {
-          title: "Module 6: Panel Data Econometrics",
-          topics: ["Introduction to panel datasets", "Fixed vs. random effects models", "Dynamic panel models", "Case Study: Analyzing macro indicators across countries"]
-        },
-        {
-          title: "Module 7: Forecasting Economic & Financial Variables",
-          topics: ["Forecasting techniques and evaluation", "Model validation and accuracy testing", "Practical: Building forecasting models for macroeconomic data"]
-        },
-        {
-          title: "Module 8: Structural Models for Policy Analysis",
-          topics: ["Structural econometric models for policy evaluation", "Measuring the effects of monetary and fiscal policy", "Case Study: Policy simulation using structural models"]
-        },
-        {
-          title: "Module 9: Risk Analysis & Financial Econometrics",
-          topics: ["Modeling financial returns and risk", "Forecasting financial risk indicators", "Practical: Real-world risk analysis using market data"]
-        },
-        {
-          title: "Module 10: Real-World Applications & Project Work",
-          topics: ["Review of key methodologies", "Hands-on project: Build an econometric model for macroeconomic or financial forecasting", "Group presentations and feedback", "Capstone Project: Econometric modeling for a real macro-financial challenge"]
-        }
+        { title: "Module 1: Introduction to Econometrics for Macroeconomics and Finance", topics: ["Overview of econometrics in macro and financial analysis", "Key econometric tools and concepts", "Introduction to EViews and Stata", "Practical: Importing and preparing macroeconomic data"] },
+        { title: "Module 2: Time Series Econometrics", topics: ["Characteristics of macroeconomic and financial time series", "Testing for stationarity (ADF, KPSS)", "ARIMA and SARIMA modeling", "Case Study: Macroeconomic forecasting"] },
+        { title: "Module 3: Cointegration & Error Correction Models", topics: ["Long-run economic relationships", "Estimating VECM models", "Practical: Cointegration testing with real macroeconomic data"] },
+        { title: "Module 4: Vector Autoregression (VAR) & Impulse Response Analysis", topics: ["Building and estimating VAR models", "Impulse response and variance decomposition", "Applications in macroeconomic forecasting", "Case Study: Analyzing macroeconomic shocks"] },
+        { title: "Module 5: Volatility Modeling – ARCH & GARCH Models", topics: ["Understanding volatility in financial markets", "Estimating ARCH/GARCH models", "Practical: Modeling and forecasting financial market volatility"] },
+        { title: "Module 6: Panel Data Econometrics", topics: ["Introduction to panel datasets", "Fixed vs. random effects models", "Dynamic panel models", "Case Study: Analyzing macro indicators across countries"] },
+        { title: "Module 7: Forecasting Economic & Financial Variables", topics: ["Forecasting techniques and evaluation", "Model validation and accuracy testing", "Practical: Building forecasting models for macroeconomic data"] },
+        { title: "Module 8: Structural Models for Policy Analysis", topics: ["Structural econometric models for policy evaluation", "Measuring the effects of monetary and fiscal policy", "Case Study: Policy simulation using structural models"] },
+        { title: "Module 9: Risk Analysis & Financial Econometrics", topics: ["Modeling financial returns and risk", "Forecasting financial risk indicators", "Practical: Real-world risk analysis using market data"] },
+        { title: "Module 10: Real-World Applications & Project Work", topics: ["Review of key methodologies", "Hands-on project: Build an econometric model for macroeconomic or financial forecasting", "Group presentations and feedback", "Capstone Project: Econometric modeling for a real macro-financial challenge"] }
       ]
     },
     {
       id: 7,
       title: "Machine Learning for Managerial Decision Making Using TensorFlow",
       level: "Foundation to Intermediate",
-      introduction: "In today's fast-paced business environment, effective decision-making is critical but often challenged by complex data and scarce resources. This course introduces machine learning (ML) techniques using TensorFlow to empower managers and business leaders to leverage AI for smarter, data-driven decisions. Through hands-on exercises and real-world case studies, participants will learn to build, interpret, and deploy ML models that enhance forecasting, resource allocation, and strategic planning.",
+      thumbnail: courseAiMl,
+      introduction: "This course introduces machine learning (ML) techniques using TensorFlow to empower managers and business leaders to leverage AI for smarter, data-driven decisions. Through hands-on exercises and real-world case studies, participants will learn to build, interpret, and deploy ML models that enhance forecasting, resource allocation, and strategic planning.",
       whoShouldAttend: [
         "Business Executives & Managers",
         "Mid-level Managers & Team Leaders",
@@ -412,33 +369,19 @@ const Training = () => {
         "Use TensorFlow to create models for predictive decision-making"
       ],
       modules: [
-        {
-          title: "Module 1: Foundations of Machine Learning in Business",
-          topics: ["ML vs traditional analytics", "Supervised vs unsupervised learning", "Use cases: HR, finance, operations, customer engagement", "Hands-on: Identify ML opportunities in your organization"]
-        },
-        {
-          title: "Module 2: Working with TensorFlow for Business Insights",
-          topics: ["TensorFlow architecture and environment setup", "Building linear regression and classification models", "Preparing real-world business datasets", "Hands-on: Train a forecasting model using TensorFlow"]
-        },
-        {
-          title: "Module 3: Advanced ML Techniques for Strategic Analysis",
-          topics: ["Neural networks and deep learning basics", "Customer segmentation with clustering algorithms (K-Means, PCA)", "Decision trees and ensemble models via TensorFlow Decision Forests", "Hands-on: Implement segmentation and predictive scoring"]
-        },
-        {
-          title: "Module 4: Interpreting, Visualizing, and Deploying ML Models",
-          topics: ["Evaluating model accuracy and managing overfitting", "Confusion matrix and performance metrics", "Integration with Power BI and Excel for visualization", "Exporting and deploying TensorFlow models", "Hands-on: Present ML insights through dashboards"]
-        },
-        {
-          title: "Module 5: Ethical AI, Governance & Capstone Project",
-          topics: ["Addressing bias, fairness, and explainability in ML", "Managing risk in AI adoption", "Capstone: Solve a real managerial problem with ML", "Hands-on: End-to-end project presentation and peer feedback"]
-        }
+        { title: "Module 1: Foundations of Machine Learning in Business", topics: ["ML vs traditional analytics", "Supervised vs unsupervised learning", "Use cases: HR, finance, operations, customer engagement", "Hands-on: Identify ML opportunities in your organization"] },
+        { title: "Module 2: Working with TensorFlow for Business Insights", topics: ["TensorFlow architecture and environment setup", "Building linear regression and classification models", "Preparing real-world business datasets", "Hands-on: Train a forecasting model using TensorFlow"] },
+        { title: "Module 3: Advanced ML Techniques for Strategic Analysis", topics: ["Neural networks and deep learning basics", "Customer segmentation with clustering algorithms (K-Means, PCA)", "Decision trees and ensemble models via TensorFlow Decision Forests", "Hands-on: Implement segmentation and predictive scoring"] },
+        { title: "Module 4: Interpreting, Visualizing, and Deploying ML Models", topics: ["Evaluating model accuracy and managing overfitting", "Confusion matrix and performance metrics", "Integration with Power BI and Excel for visualization", "Exporting and deploying TensorFlow models", "Hands-on: Present ML insights through dashboards"] },
+        { title: "Module 5: Ethical AI, Governance & Capstone Project", topics: ["Addressing bias, fairness, and explainability in ML", "Managing risk in AI adoption", "Capstone: Solve a real managerial problem with ML", "Hands-on: End-to-end project presentation and peer feedback"] }
       ]
     },
     {
       id: 8,
       title: "Microsoft Excel for Agriculture Professionals Training Course",
       level: "Foundation to Intermediate",
-      introduction: "Microsoft Excel is a powerful and accessible tool for storing, managing, analyzing, and visualizing agricultural data. This course provides practical, hands-on experience using Excel's advanced functions, pivot tables, and automation features tailored specifically for agriculture professionals. Participants will learn how to transform raw data into actionable insights that improve decision-making and reporting in agricultural operations, research, and extension services.",
+      thumbnail: coursePython, // Placeholder
+      introduction: "This course provides practical, hands-on experience using Excel’s advanced functions, pivot tables, and automation features tailored specifically for agriculture professionals. Participants will learn how to transform raw data into actionable insights that improve decision-making and reporting in agricultural operations, research, and extension services.",
       whoShouldAttend: [
         "Farm Managers",
         "Agricultural Economists",
@@ -471,46 +414,16 @@ const Training = () => {
         "Apply best practices for agricultural data management and reporting"
       ],
       modules: [
-        {
-          title: "Module 1: Foundations of Excel for Agriculture Extension",
-          topics: ["Structured tables and data validation", "Formula fundamentals and automatic application", "Using references and named ranges"]
-        },
-        {
-          title: "Module 2: Advanced Functions for Agriculture Data",
-          topics: ["Special text and logical functions for agricultural use cases"]
-        },
-        {
-          title: "Module 3: Data Analysis and Visualization",
-          topics: ["Creating and customizing pivot tables and charts", "Using array functions and conditional formatting", "Overview of the Analysis Toolpak and its applications"]
-        },
-        {
-          title: "Module 4: Advanced Lookup Techniques",
-          topics: ["Lookup functions for managing agricultural datasets"]
-        },
-        {
-          title: "Module 5: Data Protection and Automation",
-          topics: ["Data validation and worksheet protection", "Recording and using macros to automate tasks"]
-        },
-        {
-          title: "Module 6: Integrating Data from Multiple Sources",
-          topics: ["Linking worksheets and consolidating workbooks"]
-        },
-        {
-          title: "Module 7: Worksheet Security and Review",
-          topics: ["Securing worksheets, tracking changes, and protecting formulas"]
-        },
-        {
-          title: "Module 8: Mini Project and Recap",
-          topics: ["Applying learned skills in a practical mini project", "Recap of essential Excel techniques"]
-        },
-        {
-          title: "Module 9: Practical Applications in Agriculture",
-          topics: ["Case studies demonstrating Excel's use in agriculture extension", "Hands-on exercises with real agricultural datasets"]
-        },
-        {
-          title: "Module 10: Advanced Data Management",
-          topics: ["Data cleaning and preparation best practices", "Advanced analysis methods in agricultural contexts"]
-        }
+        { title: "Module 1: Foundations of Excel for Agriculture Extension", topics: ["Structured tables and data validation", "Formula fundamentals and automatic application", "Using references and named ranges"] },
+        { title: "Module 2: Advanced Functions for Agriculture Data", topics: ["Special text and logical functions for agricultural use cases"] },
+        { title: "Module 3: Data Analysis and Visualization", topics: ["Creating and customizing pivot tables and charts", "Using array functions and conditional formatting", "Overview of the Analysis Toolpak and its applications"] },
+        { title: "Module 4: Advanced Lookup Techniques", topics: ["Lookup functions for managing agricultural datasets"] },
+        { title: "Module 5: Data Protection and Automation", topics: ["Data validation and worksheet protection", "Recording and using macros to automate tasks"] },
+        { title: "Module 6: Integrating Data from Multiple Sources", topics: ["Linking worksheets and consolidating workbooks"] },
+        { title: "Module 7: Worksheet Security and Review", topics: ["Securing worksheets, tracking changes, and protecting formulas"] },
+        { title: "Module 8: Mini Project and Recap", topics: ["Applying learned skills in a practical mini project", "Recap of essential Excel techniques"] },
+        { title: "Module 9: Practical Applications in Agriculture", topics: ["Case studies demonstrating Excel’s use in agriculture extension", "Hands-on exercises with real agricultural datasets"] },
+        { title: "Module 10: Advanced Data Management", topics: ["Data cleaning and preparation best practices", "Advanced analysis methods in agricultural contexts"] }
       ]
     },
     {
@@ -518,6 +431,7 @@ const Training = () => {
       title: "Intermediate Data Analysis, Visualization, and Reporting for Auditors Using Microsoft Excel and Power BI",
       level: "Intermediate",
       duration: "5 Days",
+      thumbnail: courseBi,
       introduction: "This hands-on course equips auditors with essential skills in data analysis, visualization, and reporting using Microsoft Excel and Power BI. Participants will learn how to extract, transform, and load (ETL) data efficiently, apply intermediate Excel techniques for data manipulation, and create dynamic, interactive dashboards and reports in Power BI. Focusing on real-world audit scenarios, this course empowers auditors to handle large datasets, uncover actionable insights, and automate reporting processes—bridging the gap between raw data and informed decision-making.",
       whoShouldAttend: [
         "Auditors and Audit Teams",
@@ -559,26 +473,11 @@ const Training = () => {
         "Build a foundation for advanced data analytics techniques in auditing"
       ],
       modules: [
-        {
-          title: "Module 1: Fundamentals of Data Preparation and ETL",
-          topics: ["Understanding ETL and its importance in auditing", "Extracting data from multiple sources (CSV, Excel, databases)", "Transforming data: cleaning, reshaping, removing inconsistencies", "Loading data into Excel and Power BI", "Best practices in data preparation", "Case Study: Preparing financial data for audit analysis"]
-        },
-        {
-          title: "Module 2: Data Analysis Techniques in Microsoft Excel",
-          topics: ["Excel functions: VLOOKUP, INDEX-MATCH, logical functions", "Pivot tables and pivot charts for data summarization", "Data analysis tools: What-If Analysis, Solver", "Conditional formatting for key findings", "Trend analysis and variance reporting", "Case Study: Expense report analysis and anomaly detection"]
-        },
-        {
-          title: "Module 3: Introduction to Power BI and Data Connectivity",
-          topics: ["Power BI interface and core features", "Connecting to Excel, databases, and other sources", "Using Power Query for seamless ETL", "Data preparation for Power BI analysis", "Navigating Power BI workspace", "Case Study: Importing and transforming operational data"]
-        },
-        {
-          title: "Module 4: Building Dynamic Dashboards and Visualizations",
-          topics: ["Designing clear and effective dashboards", "Using charts, KPIs, and visuals in Power BI", "Customizing with slicers and filters", "Real-time data integration and dynamic updates", "Storytelling with data visualizations", "Case Study: Financial performance dashboard creation"]
-        },
-        {
-          title: "Module 5: Automating Reporting and Insights Generation",
-          topics: ["Automating workflows with Power Query", "Publishing and sharing reports collaboratively", "Enhancing interactivity with drill-throughs and bookmarks", "Integrating insights into decision-making", "Maintaining and updating automated reports", "Case Study: Automating monthly audit reports"]
-        }
+        { title: "Module 1: Fundamentals of Data Preparation and ETL", topics: ["Understanding ETL and its importance in auditing", "Extracting data from multiple sources (CSV, Excel, databases)", "Transforming data: cleaning, reshaping, removing inconsistencies", "Loading data into Excel and Power BI", "Best practices in data preparation", "Case Study: Preparing financial data for audit analysis"] },
+        { title: "Module 2: Data Analysis Techniques in Microsoft Excel", topics: ["Excel functions: VLOOKUP, INDEX-MATCH, logical functions", "Pivot tables and pivot charts for data summarization", "Data analysis tools: What-If Analysis, Solver", "Conditional formatting for key findings", "Trend analysis and variance reporting", "Case Study: Expense report analysis and anomaly detection"] },
+        { title: "Module 3: Introduction to Power BI and Data Connectivity", topics: ["Power BI interface and core features", "Connecting to Excel, databases, and other sources", "Using Power Query for seamless ETL", "Data preparation for Power BI analysis", "Navigating Power BI workspace", "Case Study: Importing and transforming operational data"] },
+        { title: "Module 4: Building Dynamic Dashboards and Visualizations", topics: ["Designing clear and effective dashboards", "Using charts, KPIs, and visuals in Power BI", "Customizing with slicers and filters", "Real-time data integration and dynamic updates", "Storytelling with data visualizations", "Case Study: Financial performance dashboard creation"] },
+        { title: "Module 5: Automating Reporting and Insights Generation", topics: ["Automating workflows with Power Query", "Publishing and sharing reports collaboratively", "Enhancing interactivity with drill-throughs and bookmarks", "Integrating insights into decision-making", "Maintaining and updating automated reports", "Case Study: Automating monthly audit reports"] }
       ]
     },
     {
@@ -586,6 +485,7 @@ const Training = () => {
       title: "Epidemiology and Biostatistics with R Training Course",
       level: "Foundation to Intermediate",
       duration: "10 Days",
+      thumbnail: courseAiMl, // Placeholder
       introduction: "In public health and medical research, the ability to analyze data and understand disease patterns is crucial. This course provides a solid foundation in epidemiological principles and biostatistical methods, utilizing the powerful R programming language for data manipulation, analysis, and visualization. Participants will gain practical skills to apply epidemiological and biostatistical techniques to real-world health data, empowering data-driven decision-making and research interpretation.",
       whoShouldAttend: [
         "Public Health Professionals",
@@ -615,55 +515,24 @@ const Training = () => {
         "Critically interpret and present epidemiological and biostatistical results effectively"
       ],
       modules: [
-        {
-          title: "Module 1: Introduction to Epidemiology",
-          topics: ["Definition, scope, and importance", "Key measures: incidence, prevalence, morbidity, mortality", "Epidemiological study types: descriptive, analytical, experimental", "Bias, confounding, and causality concepts"]
-        },
-        {
-          title: "Module 2: Introduction to Biostatistics",
-          topics: ["Populations, samples, and variables", "Descriptive statistics: central tendency and variability", "Probability distributions and statistical inference", "Hypothesis testing and confidence intervals"]
-        },
-        {
-          title: "Module 3: Getting Started with R",
-          topics: ["Introduction to R and RStudio", "Basic syntax and data structures", "Importing, cleaning, and managing datasets", "Data visualization with ggplot2"]
-        },
-        {
-          title: "Module 4: Epidemiological Data Collection and Management",
-          topics: ["Data sources and collection methods", "Designing data collection tools and surveys", "Data quality assurance and ethical considerations"]
-        },
-        {
-          title: "Module 5: Descriptive Epidemiology with R",
-          topics: ["Techniques for descriptive analysis", "Calculating rates and ratios", "Visualization of epidemiological data", "Case studies in descriptive epidemiology"]
-        },
-        {
-          title: "Module 6: Analytical Epidemiology with R",
-          topics: ["Analyzing cohort, case-control, cross-sectional studies", "Measures of association: risk ratios, odds ratios", "Adjusting for confounders", "Regression analysis in epidemiology"]
-        },
-        {
-          title: "Module 7: Advanced Biostatistical Methods in R",
-          topics: ["Multivariable analysis and model building", "Logistic regression applications", "Poisson regression and rate analysis", "Advanced topics: mixed models, GEEs"]
-        },
-        {
-          title: "Module 8: Survival Analysis with R",
-          topics: ["Survival analysis basics and time-to-event data", "Kaplan-Meier curves", "Cox proportional hazards modeling", "Interpretation of survival data"]
-        },
-        {
-          title: "Module 9: Spatial Epidemiology and Mapping with R",
-          topics: ["Introduction to spatial epidemiology and GIS", "Mapping disease patterns and trends", "Spatial data analysis using R", "Visualization with ggmap, leaflet"]
-        },
-        {
-          title: "Module 10: Interpreting and Presenting Results",
-          topics: ["Critical appraisal of epidemiological studies", "Interpreting statistical outputs", "Effective data visualization strategies", "Preparing and presenting research findings"]
-        }
+        { title: "Module 1: Introduction to Epidemiology", topics: ["Definition, scope, and importance", "Key measures: incidence, prevalence, morbidity, mortality", "Epidemiological study types: descriptive, analytical, experimental", "Bias, confounding, and causality concepts"] },
+        { title: "Module 2: Introduction to Biostatistics", topics: ["Populations, samples, and variables", "Descriptive statistics: central tendency and variability", "Probability distributions and statistical inference", "Hypothesis testing and confidence intervals"] },
+        { title: "Module 3: Getting Started with R", topics: ["Introduction to R and RStudio", "Basic syntax and data structures", "Importing, cleaning, and managing datasets", "Data visualization with ggplot2"] },
+        { title: "Module 4: Epidemiological Data Collection and Management", topics: ["Data sources and collection methods", "Designing data collection tools and surveys", "Data quality assurance and ethical considerations"] },
+        { title: "Module 5: Descriptive Epidemiology with R", topics: ["Techniques for descriptive analysis", "Calculating rates and ratios", "Visualization of epidemiological data", "Case studies in descriptive epidemiology"] },
+        { title: "Module 6: Analytical Epidemiology with R", topics: ["Analyzing cohort, case-control, cross-sectional studies", "Measures of association: risk ratios, odds ratios", "Adjusting for confounders", "Regression analysis in epidemiology"] },
+        { title: "Module 7: Advanced Biostatistical Methods in R", topics: ["Multivariable analysis and model building", "Logistic regression applications", "Poisson regression and rate analysis", "Advanced topics: mixed models, GEEs"] },
+        { title: "Module 8: Survival Analysis with R", topics: ["Survival analysis basics and time-to-event data", "Kaplan-Meier curves", "Cox proportional hazards modeling", "Interpretation of survival data"] },
+        { title: "Module 9: Spatial Epidemiology and Mapping with R", topics: ["Introduction to spatial epidemiology and GIS", "Mapping disease patterns and trends", "Spatial data analysis using R", "Visualization with ggmap, leaflet"] },
+        { title: "Module 10: Interpreting and Presenting Results", topics: ["Critical appraisal of epidemiological studies", "Interpreting statistical outputs", "Effective data visualization strategies", "Preparing and presenting research findings"] }
       ]
     }
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-hero via-background to-navy/20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl">
@@ -680,114 +549,106 @@ const Training = () => {
         </div>
       </section>
 
-      {/* Courses List */}
-      <section className="py-16 bg-background">
+      <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="space-y-6">
-            {courses.map((course, index) => (
-              <div 
-                key={course.id}
-                className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <Accordion type="single" collapsible>
-                  <AccordionItem value={`course-${course.id}`} className="border-0">
-                    <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-muted/50">
-                      <div className="flex flex-col md:flex-row md:items-center gap-4 text-left w-full pr-4">
-                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary font-bold text-lg shrink-0">
-                          {index + 1}
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg md:text-xl font-semibold text-foreground mb-1">
-                            {course.title}
-                          </h3>
-                          <div className="flex flex-wrap gap-2">
-                            <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary/80 text-secondary-foreground text-xs font-medium rounded-full">
-                              <GraduationCap className="w-3 h-3" />
-                              {course.level}
-                            </span>
-                            {course.duration && (
-                              <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-muted text-muted-foreground text-xs font-medium rounded-full">
-                                {course.duration}
-                              </span>
-                            )}
-                          </div>
-                        </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {courses.map((course) => (
+              <Accordion key={course.id} type="single" collapsible className="border border-border rounded-xl bg-card shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out">
+                <AccordionItem value={`course-${course.id}`} className="border-0">
+                  <div className="p-4">
+                    <img src={course.thumbnail} alt={course.title} className="rounded-lg w-full h-48 object-cover mb-4" />
+                    <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 h-14 overflow-hidden">
+                      {course.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-secondary/80 text-secondary-foreground text-xs font-medium rounded-full">
+                        <GraduationCap className="w-3 h-3" />
+                        {course.level}
+                      </span>
+                      {course.duration && (
+                        <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-muted text-muted-foreground text-xs font-medium rounded-full">
+                          {course.duration}
+                        </span>
+                      )}
+                    </div>
+                    <AccordionTrigger className="w-full text-primary hover:no-underline p-0">
+                      <div className="flex items-center justify-center w-full">
+                        <span>View Details</span>
+                        <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 ml-1" />
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-6">
-                      <div className="space-y-8 pt-4">
-                        {/* Introduction */}
-                        <div className="bg-muted/30 rounded-lg p-5">
-                          <div className="flex items-center gap-2 mb-3">
-                            <BookOpen className="w-5 h-5 text-primary" />
-                            <h4 className="font-semibold text-foreground">Course Introduction</h4>
-                          </div>
-                          <p className="text-muted-foreground leading-relaxed">
-                            {course.introduction}
-                          </p>
+                  </div>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="space-y-8 pt-4">
+                      <div className="bg-muted/30 rounded-lg p-5">
+                        <div className="flex items-center gap-2 mb-3">
+                          <BookOpen className="w-5 h-5 text-primary" />
+                          <h4 className="font-semibold text-foreground">Course Introduction</h4>
                         </div>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {course.introduction}
+                        </p>
+                      </div>
 
-                        {/* Who Should Attend */}
-                        <div>
-                          <div className="flex items-center gap-2 mb-3">
-                            <Users className="w-5 h-5 text-primary" />
-                            <h4 className="font-semibold text-foreground">Who Should Attend</h4>
-                          </div>
-                          <ul className="grid md:grid-cols-2 gap-2">
-                            {course.whoShouldAttend.map((item, i) => (
-                              <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                                <span className="text-primary mt-1">•</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
+                      <div>
+                        <div className="flex items-center gap-2 mb-3">
+                          <Users className="w-5 h-5 text-primary" />
+                          <h4 className="font-semibold text-foreground">Who Should Attend</h4>
                         </div>
+                        <ul className="grid md:grid-cols-1 gap-2">
+                          {course.whoShouldAttend.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                              <span className="text-primary mt-1">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                        {/* Impact Sections */}
-                        {(course.personalImpact || course.organizationalImpact) && (
-                          <div className="grid md:grid-cols-2 gap-6">
-                            {course.personalImpact && (
-                              <div className="bg-primary/5 rounded-lg p-5">
-                                <div className="flex items-center gap-2 mb-3">
-                                  <User className="w-5 h-5 text-primary" />
-                                  <h4 className="font-semibold text-foreground">Personal Impact</h4>
-                                </div>
-                                <ul className="space-y-2">
-                                  {course.personalImpact.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                      <span className="text-primary mt-1">✓</span>
-                                      {item}
-                                    </li>
-                                  ))}
-                                </ul>
+                      {(course.personalImpact || course.organizationalImpact) && (
+                        <div className="grid md:grid-cols-1 gap-6">
+                          {course.personalImpact && (
+                            <div className="bg-primary/5 rounded-lg p-5">
+                              <div className="flex items-center gap-2 mb-3">
+                                <User className="w-5 h-5 text-primary" />
+                                <h4 className="font-semibold text-foreground">Personal Impact</h4>
                               </div>
-                            )}
-                            {course.organizationalImpact && (
-                              <div className="bg-secondary/10 rounded-lg p-5">
-                                <div className="flex items-center gap-2 mb-3">
-                                  <Building2 className="w-5 h-5 text-secondary" />
-                                  <h4 className="font-semibold text-foreground">Organizational Impact</h4>
-                                </div>
-                                <ul className="space-y-2">
-                                  {course.organizationalImpact.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                      <span className="text-secondary mt-1">✓</span>
-                                      {item}
-                                    </li>
-                                  ))}
-                                </ul>
+                              <ul className="space-y-2">
+                                {course.personalImpact.map((item, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                    <span className="text-primary mt-1">✓</span>
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                          {course.organizationalImpact && (
+                            <div className="bg-secondary/10 rounded-lg p-5">
+                              <div className="flex items-center gap-2 mb-3">
+                                <Building2 className="w-5 h-5 text-secondary" />
+                                <h4 className="font-semibold text-foreground">Organizational Impact</h4>
                               </div>
-                            )}
-                          </div>
-                        )}
+                              <ul className="space-y-2">
+                                {course.organizationalImpact.map((item, i) => (
+                                  <li key={i} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                    <span className="text-secondary mt-1">✓</span>
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                        </div>
+                      )}
 
-                        {/* Course Objectives */}
+                      {course.objectives && course.objectives.length > 0 && (
                         <div>
                           <div className="flex items-center gap-2 mb-3">
                             <Target className="w-5 h-5 text-primary" />
                             <h4 className="font-semibold text-foreground">Course Objectives</h4>
                           </div>
-                          <ul className="grid md:grid-cols-2 gap-2">
+                          <ul className="grid md:grid-cols-1 gap-2">
                             {course.objectives.map((obj, i) => (
                               <li key={i} className="flex items-start gap-2 text-muted-foreground">
                                 <span className="text-primary font-semibold">{i + 1}.</span>
@@ -796,52 +657,49 @@ const Training = () => {
                             ))}
                           </ul>
                         </div>
+                      )}
 
-                        {/* Course Modules */}
-                        <div>
-                          <h4 className="font-semibold text-foreground mb-4">Course Outline</h4>
-                          <div className="space-y-3">
-                            {course.modules.map((module, i) => (
-                              <div key={i} className="border border-border rounded-lg overflow-hidden">
-                                <Accordion type="single" collapsible>
-                                  <AccordionItem value={`module-${i}`} className="border-0">
-                                    <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-muted/50 text-sm">
-                                      <span className="text-left font-medium">{module.title}</span>
-                                    </AccordionTrigger>
-                                    <AccordionContent className="px-4 pb-4">
-                                      <ul className="space-y-1.5 pt-2">
-                                        {module.topics.map((topic, j) => (
-                                          <li key={j} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                            <span className="text-primary">→</span>
-                                            {topic}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </AccordionContent>
-                                  </AccordionItem>
-                                </Accordion>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Enroll Button */}
-                        <div className="pt-4 border-t border-border">
-                          <Button size="lg" className="rounded-full">
-                            Enquire About This Course
-                          </Button>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-4">Course Outline</h4>
+                        <div className="space-y-3">
+                          {course.modules.map((module, i) => (
+                            <div key={i} className="border border-border rounded-lg overflow-hidden">
+                              <Accordion type="single" collapsible>
+                                <AccordionItem value={`module-${i}`} className="border-0">
+                                  <AccordionTrigger className="px-4 py-3 hover:no-underline hover:bg-muted/50 text-sm">
+                                    <span className="text-left font-medium">{module.title}</span>
+                                  </AccordionTrigger>
+                                  <AccordionContent className="px-4 pb-4">
+                                    <ul className="space-y-1.5 pt-2">
+                                      {module.topics.map((topic, j) => (
+                                        <li key={j} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                          <span className="text-primary">→</span>
+                                          {topic}
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </AccordionContent>
+                                </AccordionItem>
+                              </Accordion>
+                            </div>
+                          ))}
                         </div>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
+
+                      <div className="pt-4 border-t border-border">
+                        <Button size="lg" className="rounded-full">
+                          Enquire About This Course
+                        </Button>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
