@@ -4,6 +4,10 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+import founderCeo from "/public/FOUNDER,CEO.jpg";
+import cofounderMd from "/public/C0-founder, managing director.jpg";
+import operationsManager from "/public/Operations Manager.jpg";
+
 const coreValues = [
   { icon: CheckCircle, label: "Integrity", color: "text-teal" },
   { icon: Lightbulb, label: "Innovation", color: "text-orange" },
@@ -24,17 +28,17 @@ const team = [
   {
     name: "Sadique Kwatsima",
     role: "FOUNDER, CEO",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    image: founderCeo,
   },
   {
     name: "Juma Godwin",
     role: "CO-FOUNDER, MANAGING DIRECTOR",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+    image: cofounderMd,
   },
   {
     name: "Sandra Matioli",
     role: "OPERATIONS MANAGER",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face",
+    image: operationsManager,
   },
 ];
 

@@ -1,10 +1,12 @@
+import LogoHorizontal from "/public/Logo Horizontal.png";
+
 const Footer = () => {
   return (
     <footer className="bg-navy text-hero-foreground py-12" id="contact">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">SG BIG DATA</h3>
+            <img src={LogoHorizontal} alt="SG Big Data Logo" className="h-8 mb-4" />
             <p className="text-hero-foreground/80 text-sm">
               Research and Consulting
             </p>
