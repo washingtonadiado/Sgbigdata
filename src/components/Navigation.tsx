@@ -33,12 +33,13 @@ const Navigation = () => {
           >
             Services
           </a>
-          <a 
-            href="#about" 
+          <NavLink 
+            to="/about" 
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            activeClassName="text-primary"
           >
             About us
-          </a>
+          </NavLink>
           <a 
             href="#contact" 
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
