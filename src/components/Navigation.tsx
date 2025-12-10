@@ -27,12 +27,13 @@ const Navigation = () => {
           >
             Training
           </NavLink>
-          <a 
-            href="#services" 
+          <NavLink 
+            to="/services" 
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            activeClassName="text-primary"
           >
             Services
-          </a>
+          </NavLink>
           <NavLink 
             to="/about" 
             className="text-sm font-medium text-foreground hover:text-primary transition-colors"
