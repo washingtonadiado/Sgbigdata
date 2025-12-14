@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
-import LogoHorizontal from "/public/Logo Horizontal.png";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const Navigation = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <img src={LogoHorizontal} alt="SG Big Data Logo" className="h-8" />
+          <img src="/Logo Horizontal.png" alt="SG Big Data Logo" className="h-8" />
           <div className="text-xs text-muted-foreground hidden sm:block">
             RESEARCH AND CONSULTING
           </div>
@@ -51,9 +51,12 @@ const Navigation = () => {
           </NavLink>
         </div>
 
-        <Button variant="default" size="lg" className="rounded-full">
-          Book a Consultation
-        </Button>
+        <div className="flex items-center gap-4">
+          <ThemeSwitcher />
+          <Button variant="default" size="lg" className="rounded-full">
+            Book a Consultation
+          </Button>
+        </div>
       </div>
     </nav>
   );

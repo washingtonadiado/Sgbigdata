@@ -4,16 +4,12 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-import founderCeo from "/public/FOUNDER,CEO.jpg";
-import cofounderMd from "/public/C0-founder, managing director.jpg";
-import operationsManager from "/public/Operations Manager.jpg";
-
 const coreValues = [
-  { icon: CheckCircle, label: "Integrity", color: "text-teal" },
-  { icon: Lightbulb, label: "Innovation", color: "text-orange" },
-  { icon: Search, label: "Simplicity", color: "text-teal" },
-  { icon: TrendingUp, label: "Impact", color: "text-orange" },
-  { icon: Shield, label: "Data responsibility", color: "text-teal" },
+  { icon: CheckCircle, label: "Integrity", color: "text-primary" },
+  { icon: Lightbulb, label: "Innovation", color: "text-secondary" },
+  { icon: Search, label: "Simplicity", color: "text-primary" },
+  { icon: TrendingUp, label: "Impact", color: "text-secondary" },
+  { icon: Shield, label: "Data responsibility", color: "text-primary" },
 ];
 
 const whyChooseUs = [
@@ -28,17 +24,17 @@ const team = [
   {
     name: "Sadique Kwatsima",
     role: "FOUNDER, CEO",
-    image: founderCeo,
+    image: "/FOUNDER,CEO.jpg",
   },
   {
     name: "Juma Godwin",
     role: "CO-FOUNDER, MANAGING DIRECTOR",
-    image: cofounderMd,
+    image: "/C0-founder, managing director.jpg",
   },
   {
     name: "Sandra Matioli",
     role: "OPERATIONS MANAGER",
-    image: operationsManager,
+    image: "/Operations Manager.jpg",
   },
 ];
 
@@ -48,13 +44,13 @@ const About = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-navy text-white">
+      <section className="pt-32 pb-20 bg-hero text-hero-foreground">
         <div className="container mx-auto px-6 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            About <span className="text-teal">SG Big Data</span>
+            About <span className="text-primary">SG Big Data</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            <span className="text-orange font-semibold">Providing Insight Beyond Tomorrow</span> — we help organizations use data responsibly, strategically, and intelligently to solve real-world challenges.
+          <p className="text-xl md:text-2xl text-hero-foreground/80 max-w-4xl mx-auto leading-relaxed">
+            <span className="text-secondary font-semibold">Providing Insight Beyond Tomorrow</span> — we help organizations use data responsibly, strategically, and intelligently to solve real-world challenges.
           </p>
         </div>
       </section>
@@ -65,8 +61,8 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Mission */}
             <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
-              <div className="w-16 h-16 bg-teal/10 rounded-xl flex items-center justify-center mb-6">
-                <Heart className="w-8 h-8 text-teal" />
+              <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                <Heart className="w-8 h-8 text-primary" />
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
@@ -76,8 +72,8 @@ const About = () => {
 
             {/* Vision */}
             <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
-              <div className="w-16 h-16 bg-orange/10 rounded-xl flex items-center justify-center mb-6">
-                <TrendingUp className="w-8 h-8 text-orange" />
+              <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                <TrendingUp className="w-8 h-8 text-secondary" />
               </div>
               <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
@@ -89,7 +85,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-muted">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             Our Core Values
@@ -121,9 +117,9 @@ const About = () => {
             {whyChooseUs.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start gap-4 bg-card p-5 rounded-xl border border-border hover:border-teal/50 transition-colors"
+                className="flex items-start gap-4 bg-card p-5 rounded-xl border border-border hover:border-primary/50 transition-colors"
               >
-                <CheckCircle className="w-6 h-6 text-teal flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-foreground text-lg">{item}</span>
               </div>
             ))}
@@ -132,12 +128,12 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-navy text-white">
+      <section className="py-20 bg-hero text-hero-foreground">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Meet the Experts Behind the Data
           </h2>
-          <p className="text-center text-gray-400 mb-12">
+          <p className="text-center text-hero-foreground/60 mb-12">
             Leadership team driving innovation and excellence
           </p>
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -147,7 +143,7 @@ const About = () => {
                 className="text-center group"
               >
                 <div className="relative mb-6 inline-block">
-                  <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-teal/30 group-hover:border-teal transition-colors">
+                  <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors">
                     <img
                       src={member.image}
                       alt={member.name}
@@ -156,7 +152,7 @@ const About = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-orange text-sm font-medium tracking-wide">{member.role}</p>
+                <p className="text-secondary text-sm font-medium tracking-wide">{member.role}</p>
               </div>
             ))}
           </div>
@@ -164,7 +160,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-teal to-teal/80">
+      <section className="py-20 bg-gradient-to-r from-primary to-primary/80">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Together, Let's Transform How You Use Data
@@ -173,7 +169,7 @@ const About = () => {
             Partner with us to unlock the full potential of your data assets
           </p>
           <Link to="/">
-            <Button size="lg" className="bg-white text-teal hover:bg-gray-100 font-semibold px-8">
+            <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8">
               Get Started Today
             </Button>
           </Link>

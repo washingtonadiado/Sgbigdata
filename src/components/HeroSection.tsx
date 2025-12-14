@@ -1,82 +1,42 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { useEffect, useRef } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+const slides = ["/Sliding 1.jpg", "/slide2.jpg", "/slide3.jpg"];
 
 const HeroSection = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles: Array<{
-      x: number;
-      y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      opacity: number;
-    }> = [];
-
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: Math.random() * 0.5 + 0.2,
-        opacity: Math.random() * 0.5 + 0.2,
-      });
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
-        ctx.fillStyle = `rgba(52, 211, 153, ${particle.opacity})`;
-        ctx.fillRect(particle.x, particle.y, particle.size, particle.size);
-
-        particle.y += particle.speedY;
-        particle.x += particle.speedX;
-
-        if (particle.y > canvas.height) {
-          particle.y = 0;
-          particle.x = Math.random() * canvas.width;
-        }
-        if (particle.x > canvas.width || particle.x < 0) {
-          particle.x = Math.random() * canvas.width;
-        }
-      });
-
-      requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-navy">
-      <canvas
-        ref={canvasRef}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero">
+      <Carousel
         className="absolute inset-0 w-full h-full"
-        style={{ opacity: 0.6 }}
-      />
-      
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy/50 to-background" />
+        plugins={[
+          Autoplay({
+            delay: 5000,
+          }),
+        ]}
+        opts={{
+          loop: true,
+        }}
+      >
+        <CarouselContent>
+          {slides.map((slide, index) => (
+            <CarouselItem key={index}>
+              <img
+                src={slide}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 container mx-auto px-4 py-32 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-hero-foreground mb-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
