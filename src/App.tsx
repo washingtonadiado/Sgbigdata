@@ -12,10 +12,17 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import { useState, useEffect } from "react";
 
 const queryClient = new QueryClient();
 
 const App = () => {
+  const [initialLoad, setInitialLoad] = useState(true);
+
+  useEffect(() => {
+    setInitialLoad(false);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -24,7 +31,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route element={<Layout />}>
+              <Route element={<Layout initialLoad={initialLoad} />}>
                 <Route path="/" element={<Index />} />
                 <Route path="/training" element={<Training />} />
                 <Route path="/training/:courseId" element={<CourseDetail />} />

@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import Loader from "@/components/ui/Loader";
 import { usePageLoader } from "@/hooks/usePageLoader";
 
-const Layout = () => {
-  const loading = usePageLoader();
+const Layout = ({ initialLoad }: { initialLoad: boolean }) => {
+  const loading = usePageLoader(initialLoad);
 
   return (
     <>
