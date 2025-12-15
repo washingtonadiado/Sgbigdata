@@ -63,28 +63,7 @@ const Training = () => {
         </section>
       </ScrollAnimation>
 
-      <ScrollAnimation>
-        <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Corporate Training Available
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Get custom training programs for your team with volume discounts and tailored curriculum
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button size="lg" className="rounded-full">
-                  Request Group Pricing
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full">
-                  Schedule Consultation
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+     
 
     </div>
   );
