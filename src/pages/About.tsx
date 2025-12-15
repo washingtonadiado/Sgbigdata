@@ -43,12 +43,16 @@ const About = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-hero text-hero-foreground">
-        <div className="container mx-auto px-6 text-center">
+      <section
+        className="relative pt-32 pb-20 bg-cover bg-center"
+        style={{ backgroundImage: "url('/About us.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative container mx-auto px-6 text-center text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             About <span className="text-primary">SG Big Data</span>
           </h1>
-          <p className="text-xl md:text-2xl text-hero-foreground/80 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed">
             <span className="text-secondary font-semibold">Providing Insight Beyond Tomorrow</span> — we help organizations use data responsibly, strategically, and intelligently to solve real-world challenges.
           </p>
         </div>

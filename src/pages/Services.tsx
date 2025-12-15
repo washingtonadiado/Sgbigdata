@@ -78,12 +78,16 @@ const Services = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-navy text-white">
-        <div className="container mx-auto px-6 text-center">
+      <section
+        className="relative pt-32 pb-20 bg-cover bg-center"
+        style={{ backgroundImage: "url('/Services cover.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative container mx-auto px-6 text-center text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Our <span className="text-teal">Services</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl max-w-4xl mx-auto leading-relaxed">
             We deliver data strategy, analytics, automation, and compliance solutions that scale with your organization — whether you're just getting started or building enterprise intelligence.
           </p>
         </div>

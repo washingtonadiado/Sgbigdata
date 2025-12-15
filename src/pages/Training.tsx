@@ -9,16 +9,20 @@ const Training = () => {
   return (
     <div className="min-h-screen bg-background">
       
-      <section className="pt-32 pb-16 bg-gradient-to-br from-hero via-background to-navy/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+      <section
+        className="relative pt-32 pb-16 bg-cover bg-center"
+        style={{ backgroundImage: "url('/Training cover.jpg')" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl text-white">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Professional <span className="text-primary">Courses</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-4">
+            <p className="text-xl mb-4">
               Transform your career with practical, hands-on training programs designed for professionals across Africa.
             </p>
-            <p className="text-muted-foreground">
+            <p>
               {courses.length} courses available • Expert instructors • Real-world case studies
             </p>
           </div>
