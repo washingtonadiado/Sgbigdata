@@ -1,6 +1,6 @@
 .loader {
   --size: 400px;
-  --duration: 3s;
+  --duration: 5s;
   --logo-color: hsl(var(--primary));
   --background: hsla(var(--primary) / 0.15);
   height: var(--size);
