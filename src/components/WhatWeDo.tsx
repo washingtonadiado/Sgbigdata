@@ -54,7 +54,7 @@ const WhatWeDo = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="flex flex-col">
+            <Card key={index} className="flex flex-col group transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 bg-gradient-to-br from-card to-card/90">
               <CardHeader>
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
