@@ -1,9 +1,9 @@
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const WhatWeDo = () => {
   const services = [
@@ -52,23 +52,17 @@ const WhatWeDo = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {services.map((service, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6 shadow-sm"
-              >
-                <AccordionTrigger className="text-lg font-semibold text-foreground hover:text-primary hover:no-underline">
-                  {service.title}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
-                  {service.description}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <Card key={index} className="flex flex-col">
+              <CardHeader>
+                <CardTitle className="text-xl">{service.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-muted-foreground">{service.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
