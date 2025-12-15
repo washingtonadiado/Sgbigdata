@@ -18,38 +18,38 @@ const Navigation = () => {
         <div className="hidden md:flex items-center gap-8">
           <NavLink 
             to="/" 
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors"
             activeClassName="text-primary"
           >
             Home
           </NavLink>
           <NavLink 
             to="/training" 
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors"
             activeClassName="text-primary"
           >
             Training
           </NavLink>
           <NavLink 
             to="/services" 
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors"
             activeClassName="text-primary"
           >
             Services
           </NavLink>
           <NavLink 
             to="/about" 
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors"
             activeClassName="text-primary"
           >
-            About us
+            About Us
           </NavLink>
           <NavLink 
             to="/contact" 
-            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+            className="text-base font-medium text-foreground hover:text-primary transition-colors"
             activeClassName="text-primary"
           >
-            Contact us
+            Contact Us
           </NavLink>
         </div>
 
@@ -76,8 +76,8 @@ const Navigation = () => {
             <NavLink to="/" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Home</NavLink>
             <NavLink to="/training" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Training</NavLink>
             <NavLink to="/services" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Services</NavLink>
-            <NavLink to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">About us</NavLink>
-            <NavLink to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Contact us</NavLink>
+            <NavLink to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">About Us</NavLink>
+            <NavLink to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Contact Us</NavLink>
             <Button variant="default" size="lg" className="w-full mt-4 rounded-full">
               Book a Consultation
             </Button>
