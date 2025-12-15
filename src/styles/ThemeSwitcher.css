@@ -20,6 +20,7 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+  transform: translateY(-2px);
 }
 
 .darkThemeBtn label:active {
