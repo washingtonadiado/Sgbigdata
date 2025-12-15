@@ -1,7 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { courses } from '@/data/courses';
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BookOpen, Users, Target, GraduationCap, Building2, User } from "lucide-react";
@@ -17,7 +15,6 @@ const CourseDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
 
       {/* Course Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-hero via-background to-navy/20">
@@ -163,9 +160,9 @@ const CourseDetail = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };
 
 export default CourseDetail;
+

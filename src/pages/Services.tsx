@@ -1,6 +1,4 @@
 import { BarChart3, Database, Shield, Bot, GraduationCap, FlaskConical, CheckCircle } from "lucide-react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -76,7 +74,6 @@ const services = [
 const Services = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 bg-navy text-white">
@@ -156,7 +153,6 @@ const Services = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

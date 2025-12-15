@@ -1,5 +1,3 @@
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { GraduationCap } from "lucide-react";
 import { courses } from "@/data/courses";
@@ -8,7 +6,6 @@ import { Link } from "react-router-dom";
 const Training = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
       
       <section className="pt-32 pb-16 bg-gradient-to-br from-hero via-background to-navy/20">
         <div className="container mx-auto px-4">
@@ -79,7 +76,6 @@ const Training = () => {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 };

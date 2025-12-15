@@ -4,6 +4,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -34,6 +36,8 @@ const HeroSection = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
       </Carousel>
 
       <div className="absolute inset-0 bg-black/50" />
@@ -68,3 +72,5 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
+
