@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { Menu, X } from "lucide-react";
-import PushableButton from "@/components/PushableButton";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,11 +57,9 @@ const Navigation = () => {
 
         <div className="flex items-center gap-4">
           <ThemeSwitcher />
-          <div className="hidden md:block">
-            <PushableButton>
-              Book a Consultation
-            </PushableButton>
-          </div>
+          <Button variant="default" size="lg" className="hidden md:inline-flex rounded-full">
+            Book a Consultation
+          </Button>
           <div className="md:hidden">
             <Button
               onClick={() => setIsOpen(!isOpen)}
@@ -83,9 +80,9 @@ const Navigation = () => {
             <NavLink to="/services" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Services</NavLink>
             <NavLink to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">About us</NavLink>
             <NavLink to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Contact us</NavLink>
-            <PushableButton className="w-full mt-4">
+            <Button variant="default" size="lg" className="w-full mt-4 rounded-full">
               Book a Consultation
-            </PushableButton>
+            </Button>
           </div>
         </div>
       )}
