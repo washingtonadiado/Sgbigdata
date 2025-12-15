@@ -36,8 +36,8 @@ const HeroSection = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-transparent text-white border-none h-12 w-12 hover:bg-white/10" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-transparent text-white border-none h-12 w-12 hover:bg-white/10" />
       </Carousel>
 
       <div className="absolute inset-0 bg-black/50" />
