@@ -12,8 +12,8 @@
   border: 1px solid hsl(var(--border));
   background: hsla(var(--background) / 0.5);
   border-radius: 10px;
-  height: 46px;
-  width: 46px;
+  height: 36px;
+  width: 36px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@
 }
 
 .darkThemeBtn label svg.sun {
-  width: 20px;
+  width: 16px;
   opacity: 0;
   fill: hsl(var(--primary-foreground));
 }
