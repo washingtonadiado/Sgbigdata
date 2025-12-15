@@ -1,4 +1,5 @@
 @import "./styles/loader.css";
+@import "./styles/ThemeSwitcher.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -108,5 +109,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }
