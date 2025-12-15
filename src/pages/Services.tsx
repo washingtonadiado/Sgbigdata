@@ -1,3 +1,4 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { BarChart3, Database, Shield, Bot, GraduationCap, FlaskConical, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -114,21 +115,23 @@ const Services = () => {
                     </p>
                   </div>
                   
-                  <div className={`bg-card p-6 rounded-2xl border border-border shadow-lg ${
+                  <Card className={`${
                     index % 2 === 1 ? "lg:order-1" : ""
                   }`}>
-                    <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <span className="text-orange">What We Offer:</span>
-                    </h3>
-                    <ul className="space-y-3">
-                      {service.offerings.map((offering, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">{offering}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <CardContent className="p-6">
+                      <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                        <span className="text-orange">What We Offer:</span>
+                      </h3>
+                      <ul className="space-y-3">
+                        {service.offerings.map((offering, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+                            <span className="text-muted-foreground">{offering}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
                 </div>
               ))}
             </div>

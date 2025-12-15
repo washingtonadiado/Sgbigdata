@@ -1,3 +1,4 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Lightbulb, Search, TrendingUp, Shield, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -59,26 +60,30 @@ const About = () => {
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12">
               {/* Mission */}
-              <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <Heart className="w-8 h-8 text-primary" />
-                </div>
-                <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To empower organizations with strategic, ethical, and impactful data solutions that drive innovation, compliance, and growth.
-                </p>
-              </div>
+              <Card>
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
+                    <Heart className="w-8 h-8 text-primary" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    To empower organizations with strategic, ethical, and impactful data solutions that drive innovation, compliance, and growth.
+                  </p>
+                </CardContent>
+              </Card>
 
               {/* Vision */}
-              <div className="bg-card p-8 rounded-2xl border border-border shadow-lg">
-                <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
-                  <TrendingUp className="w-8 h-8 text-secondary" />
-                </div>
-                <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  To be Africa's most trusted partner in data-driven decision-making and AI transformation.
-                </p>
-              </div>
+              <Card>
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
+                    <TrendingUp className="w-8 h-8 text-secondary" />
+                  </div>
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    To be Africa's most trusted partner in data-driven decision-making and AI transformation.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
@@ -118,13 +123,12 @@ const About = () => {
             </p>
             <div className="max-w-3xl mx-auto space-y-4">
               {whyChooseUs.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 bg-card p-5 rounded-xl border border-border hover:border-primary/50 transition-colors"
-                >
-                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground text-lg">{item}</span>
-                </div>
+                <Card>
+                  <CardContent className="p-5 flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-foreground text-lg">{item}</span>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>

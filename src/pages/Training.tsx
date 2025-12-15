@@ -1,3 +1,4 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap } from "lucide-react";
 import { courses } from "@/data/courses";
@@ -30,11 +31,11 @@ const Training = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {courses.map((course) => (
                 <Link to={`/training/${course.id}`} key={course.id} className="group block">
-                  <div className="border border-border rounded-xl bg-card shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out h-full flex flex-col">
+                  <Card>
                     <div className="relative">
                       <img src={course.thumbnail} alt={course.title} className="rounded-t-xl w-full h-48 object-cover" />
                     </div>
-                    <div className="p-4 flex flex-col flex-grow">
+                    <CardContent className="p-4">
                       <h3 className="text-lg font-semibold text-foreground mb-2 flex-grow group-hover:text-primary transition-colors">
                         {course.title}
                       </h3>
@@ -49,8 +50,8 @@ const Training = () => {
                           </span>
                         )}
                       </div>
-                    </div>
-                  </div>
+                    </CardContent>
+                  </Card>
                 </Link>
               ))}
             </div>
