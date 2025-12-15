@@ -1,6 +1,7 @@
 import { BarChart3, Database, Shield, Bot, GraduationCap, FlaskConical, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 const services = [
   {
@@ -88,70 +89,74 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-6">
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`grid lg:grid-cols-2 gap-8 items-start ${
-                  index % 2 === 1 ? "lg:flex-row-reverse" : ""
-                }`}
-              >
-                <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 bg-teal/10 rounded-xl flex items-center justify-center">
-                      <service.icon className="w-7 h-7 text-teal" />
+      <ScrollAnimation>
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="space-y-16">
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  className={`grid lg:grid-cols-2 gap-8 items-start ${
+                    index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                  }`}
+                >
+                  <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-14 h-14 bg-teal/10 rounded-xl flex items-center justify-center">
+                        <service.icon className="w-7 h-7 text-teal" />
+                      </div>
+                      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                        {service.title}
+                      </h2>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold text-foreground">
-                      {service.title}
-                    </h2>
+                    <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                      {service.description}
+                    </p>
                   </div>
-                  <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    {service.description}
-                  </p>
+                  
+                  <div className={`bg-card p-6 rounded-2xl border border-border shadow-lg ${
+                    index % 2 === 1 ? "lg:order-1" : ""
+                  }`}>
+                    <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <span className="text-orange">What We Offer:</span>
+                    </h3>
+                    <ul className="space-y-3">
+                      {service.offerings.map((offering, idx) => (
+                        <li key={idx} className="flex items-start gap-3">
+                          <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">{offering}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                
-                <div className={`bg-card p-6 rounded-2xl border border-border shadow-lg ${
-                  index % 2 === 1 ? "lg:order-1" : ""
-                }`}>
-                  <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <span className="text-orange">What We Offer:</span>
-                  </h3>
-                  <ul className="space-y-3">
-                    {service.offerings.map((offering, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">{offering}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-teal to-teal/80">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            Ready to Make
-          </h2>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Smarter Decisions?
-          </h2>
-          <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help transform your data into strategic advantage
-          </p>
-          <Link to="/about">
-            <Button size="lg" className="bg-white text-teal hover:bg-gray-100 font-semibold px-8">
-              Talk to Us
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <ScrollAnimation>
+        <section className="py-20 bg-gradient-to-r from-teal to-teal/80">
+          <div className="container mx-auto px-6 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+              Ready to Make
+            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Smarter Decisions?
+            </h2>
+            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+              Let's discuss how we can help transform your data into strategic advantage
+            </p>
+            <Link to="/about">
+              <Button size="lg" className="bg-white text-teal hover:bg-gray-100 font-semibold px-8">
+                Talk to Us
+              </Button>
+            </Link>
+          </div>
+        </section>
+      </ScrollAnimation>
 
     </div>
   );
