@@ -8,6 +8,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import PushableButton from "@/components/PushableButton";
 
 const slides = ["/Sliding 1.jpg", "/slide2.jpg", "/slide3.jpg"];
 
@@ -53,9 +54,9 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
-          <Button size="lg" className="rounded-full px-8 text-base">
+          <PushableButton>
             Book a Consultation
-          </Button>
+          </PushableButton>
           <Button 
             size="lg" 
             variant="secondary" 
