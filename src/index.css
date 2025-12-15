@@ -1,5 +1,4 @@
 @import "./styles/loader.css";
-@import "./styles/ThemeSwitcher.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
