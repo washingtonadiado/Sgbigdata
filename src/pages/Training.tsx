@@ -48,11 +48,7 @@ const Training = () => {
                           <GraduationCap className="w-3 h-3" />
                           {course.level}
                         </span>
-                        {course.duration && (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-muted text-muted-foreground text-xs font-medium rounded-full">
-                            {course.duration}
-                          </span>
-                        )}
+                        
                       </div>
                     </CardContent>
                   </Card>
