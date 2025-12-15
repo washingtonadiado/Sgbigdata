@@ -20,23 +20,7 @@ const whyChooseUs = [
   "Experience across public, private, and academic sectors",
 ];
 
-const team = [
-  {
-    name: "Sadique Kwatsima",
-    role: "FOUNDER, CEO",
-    image: "/FOUNDER,CEO.jpg",
-  },
-  {
-    name: "Juma Godwin",
-    role: "CO-FOUNDER, MANAGING DIRECTOR",
-    image: "/C0-founder, managing director.jpg",
-  },
-  {
-    name: "Sandra Matioli",
-    role: "OPERATIONS MANAGER",
-    image: "/Operations Manager.jpg",
-  },
-];
+
 
 const About = () => {
   return (
@@ -139,39 +123,7 @@ const About = () => {
         </section>
       </ScrollAnimation>
 
-      {/* Team Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-hero text-hero-foreground">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              Meet the Experts Behind the Data
-            </h2>
-            <p className="text-center text-hero-foreground/60 mb-12">
-              Leadership team driving innovation and excellence
-            </p>
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {team.map((member, index) => (
-                <div
-                  key={index}
-                  className="text-center group"
-                >
-                  <div className="relative mb-6 inline-block">
-                    <div className="w-48 h-48 mx-auto rounded-2xl overflow-hidden border-4 border-primary/30 group-hover:border-primary transition-colors">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-secondary text-sm font-medium tracking-wide">{member.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+
 
       {/* CTA Section */}
       <ScrollAnimation>
