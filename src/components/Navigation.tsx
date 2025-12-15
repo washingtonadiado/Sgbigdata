@@ -15,7 +15,7 @@ const Navigation = () => {
 
         </div>
         
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 ml-auto">
           <NavLink 
             to="/" 
             className="text-base font-medium text-foreground hover:text-primary transition-colors"
@@ -51,10 +51,10 @@ const Navigation = () => {
           >
             Contact Us
           </NavLink>
+          <ThemeSwitcher />
         </div>
 
         <div className="flex items-center gap-4">
-          <ThemeSwitcher />
           <Button variant="default" size="lg" className="hidden md:inline-flex rounded-full">
             Book a Consultation
           </Button>
