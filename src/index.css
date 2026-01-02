@@ -112,3 +112,112 @@ All colors MUST be HSL.
     background-size: 20px 20px;
   }
 }
+
+/* Custom Button Styles */
+@layer components {
+  .custom-button {
+    display: inline-block;
+    padding: 10px 24px;
+    margin: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: hsl(var(--primary));
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 4px 0px hsl(var(--primary) / 0.8);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .custom-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 0px hsl(var(--primary) / 0.8);
+    background: hsl(var(--primary) / 0.9);
+  }
+
+  .custom-button:active {
+    transform: translateY(0px);
+    box-shadow: none;
+    background: hsl(var(--primary) / 0.7);
+  }
+
+  .custom-button:before,
+  .custom-button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  .custom-button:before {
+    top: -3px;
+    left: -3px;
+    border-radius: 40px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+  }
+
+  .custom-button:after {
+    bottom: -3px;
+    right: -3px;
+    border-radius: 40px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+  }
+
+  /* Secondary button variant */
+  .custom-button-secondary {
+    background: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+    box-shadow: 0px 4px 0px hsl(var(--secondary) / 0.8);
+  }
+
+  .custom-button-secondary:hover {
+    box-shadow: 0px 6px 0px hsl(var(--secondary) / 0.8);
+    background: hsl(var(--secondary) / 0.9);
+  }
+
+  .custom-button-secondary:active {
+    background: hsl(var(--secondary) / 0.7);
+  }
+
+  /* Navy button variant */
+  .custom-button-navy {
+    background: hsl(var(--navy));
+    color: #fff;
+    box-shadow: 0px 4px 0px hsl(var(--navy) / 0.8);
+  }
+
+  .custom-button-navy:hover {
+    box-shadow: 0px 6px 0px hsl(var(--navy) / 0.8);
+    background: hsl(var(--navy) / 0.9);
+  }
+
+  .custom-button-navy:active {
+    background: hsl(var(--navy) / 0.7);
+  }
+
+  /* Small button size */
+  .custom-button-sm {
+    padding: 6px 16px;
+    font-size: 14px;
+    margin: 4px;
+  }
+
+  /* Medium button size */
+  .custom-button-md {
+    padding: 8px 20px;
+    font-size: 16px;
+    margin: 6px;
+  }
+
+  /* Card texture styling */
+  .card-texture {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+}

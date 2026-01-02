@@ -1,6 +1,9 @@
 import HeroSection from "@/components/HeroSection";
-import WhoWeServe from "@/components/WhoWeServe";
+import ValueProposition from "@/components/ValueProposition";
 import WhatWeDo from "@/components/WhatWeDo";
+import WhoWeServe from "@/components/WhoWeServe";
+import SocialImpact from "@/components/SocialImpact";
+import Testimonials from "@/components/Testimonials";
 import SMESection from "@/components/SMESection";
 import ScrollAnimation from "@/components/ScrollAnimation";
 
@@ -9,13 +12,22 @@ const Index = () => {
     <div className="min-h-screen">
       <HeroSection />
       <ScrollAnimation>
-        <WhoWeServe />
+        <ValueProposition />
       </ScrollAnimation>
       <ScrollAnimation>
         <WhatWeDo />
       </ScrollAnimation>
       <ScrollAnimation>
+        <WhoWeServe />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <SocialImpact />
+      </ScrollAnimation>
+      <ScrollAnimation>
         <SMESection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <Testimonials />
       </ScrollAnimation>
     </div>
   );

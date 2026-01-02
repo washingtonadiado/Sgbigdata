@@ -1,7 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Lightbulb, Search, TrendingUp, Shield, Heart } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import CustomButton from "@/components/ui/custom-button";
 import ScrollAnimation from "@/components/ScrollAnimation";
 
 const coreValues = [
@@ -135,11 +134,9 @@ const About = () => {
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
               Partner with us to unlock the full potential of your data assets
             </p>
-            <Link to="/">
-              <Button size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold px-8">
-                Get Started Today
-              </Button>
-            </Link>
+            <CustomButton href="/contact" size="lg">
+              Get Started Today
+            </CustomButton>
           </div>
         </section>
       </ScrollAnimation>

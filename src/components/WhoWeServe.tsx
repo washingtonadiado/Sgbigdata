@@ -1,25 +1,35 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Briefcase, Bot, Rocket } from "lucide-react";
+import { Building2, Users, Heart, GraduationCap } from "lucide-react";
 
 const WhoWeServe = () => {
-  const services = [
+  const audiences = [
     {
-      icon: Briefcase,
-      title: "Corporate Enterprises",
+      icon: Building2,
+      title: "Governments and Public Sector Institutions",
       description:
-        "Align with regulatory frameworks like GDPR and Kenya's Data Protection Act using proven data governance strategies.",
+        "Supporting data-driven policymaking, service delivery optimization, and digital transformation initiatives.",
+      examples: "Policy research, citizen service analytics, digital governance frameworks"
     },
     {
-      icon: Bot,
-      title: "Tech-Driven Companies",
+      icon: Users,
+      title: "Corporates",
       description:
-        "Scale faster with AI, predictive analytics, and smart automation to enhance performance and customer experiences.",
+        "Helping organizations leverage capacity building, research, analytics, AI, and governance to improve performance, manage risk, and scale responsibly.",
+      examples: "Business intelligence, risk management, AI implementation, compliance"
     },
     {
-      icon: Rocket,
-      title: "SMEs & Startups",
+      icon: Heart,
+      title: "Development Organizations and NGOs",
       description:
-        "Make smarter, affordable decisions with our practical 'Data Smart Starter Kit' tailored to your growth stage.",
+        "Providing research, monitoring, evaluation, capacity building, and data governance solutions for social impact and inclusion.",
+      examples: "Impact measurement, program evaluation, beneficiary analytics, donor reporting"
+    },
+    {
+      icon: GraduationCap,
+      title: "Academia and Research Institutions",
+      description:
+        "Partnering on scientific and applied research, data analysis, and capacity building initiatives.",
+      examples: "Research methodology, statistical analysis, publication support, grant applications"
     },
   ];
 
@@ -28,32 +38,35 @@ const WhoWeServe = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Who We Serve
+            Who We Work With
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We work with forward-thinking organizations, from corporations and startups to tech
-            innovators, to help them transform data into meaningful impact.
+            We partner with our clients across the world to unlock value from data while ensuring ethical use, regulatory compliance, and long-term sustainability.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {services.map((service, index) => (
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {audiences.map((audience, index) => (
             <Card
               key={index}
-              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture"
             >
               <CardHeader>
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <service.icon className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
+                  <audience.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-center text-foreground">
-                  {service.title}
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {audience.title}
                 </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {audience.description}
+                </p>
               </CardHeader>
               <CardContent>
-                <p className="text-center text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="bg-muted rounded-lg p-4">
+                  <p className="text-sm font-medium text-foreground mb-2">Examples:</p>
+                  <p className="text-sm text-muted-foreground">{audience.examples}</p>
+                </div>
               </CardContent>
             </Card>
           ))}
