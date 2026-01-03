@@ -26,29 +26,47 @@ const slides = [
 const AdvancedHeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isReady, setIsReady] = useState(false);
+  const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
   
   const projectsCounter = useCountUp({ end: 500, duration: 2500, suffix: "+" });
   const organizationsCounter = useCountUp({ end: 50, duration: 2000, suffix: "+" });
   const satisfactionCounter = useCountUp({ end: 95, duration: 2200, suffix: "%" });
 
+  // Function to start auto-advance
+  const startAutoAdvance = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+    }
+    const newInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    setIntervalId(newInterval);
+  };
+
   useEffect(() => {
     // Initialize slider as ready
     setTimeout(() => setIsReady(true), 500);
     
-    // Auto-advance slides
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    // Start auto-advance
+    startAutoAdvance();
 
-    return () => clearInterval(interval);
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
   }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
+    // Reset auto-advance timer
+    startAutoAdvance();
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    // Reset auto-advance timer
+    startAutoAdvance();
   };
 
   const splitTitle = (title: string) => {
