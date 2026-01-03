@@ -1,8 +1,8 @@
 .loader {
   --size: 400px;
-  --duration: 5s;
+  --duration: 2s;
   --logo-color: hsl(var(--primary));
-  --background: hsla(var(--primary) / 0.15);
+  --background: linear-gradient(0deg, hsl(var(--primary) / 0.2) 0%, hsl(var(--accent) / 0.2) 100%);
   height: var(--size);
   aspect-ratio: 1;
   position: relative;
@@ -15,35 +15,19 @@
   border-radius: 50%;
   box-shadow:
     rgba(0, 0, 0, 0.5) 0px 10px 10px 0,
-    inset hsla(var(--accent) / 0.5) 0px 5px 10px -7px;
+    inset hsl(var(--primary) / 0.5) 0px 5px 10px -7px;
+  animation: ripple var(--duration) infinite ease-in-out;
   inset: var(--inset);
-  animation-delay: calc(var(--i) * 0.15s);
+  animation-delay: calc(var(--i) * -0.25s);
   z-index: calc(var(--i) * -1);
   pointer-events: all;
   transition: all 0.3s ease;
-  border-top: 1px solid hsla(var(--primary) / 1);
-  animation: ripple var(--duration) infinite ease-in-out;
-}
-
-.loader .box:nth-child(2) {
-  border-color: hsla(var(--primary) / 0.8);
-}
-
-.loader .box:nth-child(3) {
-  border-color: hsla(var(--primary) / 0.6);
-}
-
-.loader .box:nth-child(4) {
-  border-color: hsla(var(--primary) / 0.4);
-}
-
-.loader .box:nth-child(5) {
-  border-color: hsla(var(--primary) / 0.2);
 }
 
 .loader .box:last-child {
   filter: blur(30px);
 }
+
 .loader .box:not(:last-child):hover {
   filter: brightness(2.5) blur(5px);
 }
@@ -57,36 +41,45 @@
 }
 
 .loader .logo span {
-  animation: color-change var(--duration) infinite ease-in-out;
+  fill: var(--logo-color);
+  width: 100%;
+  animation: color-change var(--duration) infinite ease-in-out, pulse 1s infinite ease-in-out;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--logo-color);
 }
 
 @keyframes ripple {
-  0% {
+  0%, 100% {
     transform: scale(1);
+    opacity: 1;
     box-shadow:
       rgba(0, 0, 0, 0.5) 0px 10px 10px 0,
-      inset hsla(var(--accent) / 0.5) 0px 5px 10px -7px;
+      inset hsl(var(--primary) / 0.5) 0px 5px 10px -7px;
   }
-  65% {
-    transform: scale(1.4);
-    box-shadow: rgba(0, 0, 0, 0) 0px 0 0 0;
-  }
-  100% {
-    transform: scale(1);
-    box-shadow:
-      rgba(0, 0, 0, 0.5) 0px 10px 10px 0,
-      inset hsla(var(--accent) / 0.5) 0px 5px 10px -7px;
+  50% {
+    transform: scale(1.5);
+    opacity: 0.6;
+    box-shadow: 
+      rgba(0, 0, 0, 0.2) 0px 5px 15px 0,
+      inset hsl(var(--primary) / 0.3) 0px 2px 5px -3px;
   }
 }
 
 @keyframes color-change {
-  0% {
+  0%, 100% {
     color: var(--logo-color);
   }
   50% {
     color: white;
   }
-  100% {
-    color: var(--logo-color);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }

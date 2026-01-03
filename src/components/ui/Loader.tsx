@@ -3,7 +3,7 @@ const Loader = () => {
     <div className="loader">
       <div style={{ "--i": 1, "--inset": "44%" } as React.CSSProperties} className="box">
         <div className="logo">
-          <span className="text-2xl font-bold text-primary">SG</span>
+          <span>SG</span>
         </div>
       </div>
       <div style={{ "--i": 2, "--inset": "40%" } as React.CSSProperties} className="box"></div>

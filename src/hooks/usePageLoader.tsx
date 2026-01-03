@@ -7,7 +7,7 @@ export const usePageLoader = (isInitialLoad: boolean) => {
 
   useEffect(() => {
     setLoading(true);
-    const delay = isInitialLoad && location.pathname === "/" ? 5000 : 500;
+    const delay = isInitialLoad && location.pathname === "/" ? 8000 : 500;
     const timer = setTimeout(() => {
       setLoading(false);
     }, delay);
