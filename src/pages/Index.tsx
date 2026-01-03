@@ -1,4 +1,4 @@
-import HeroSection from "@/components/HeroSection";
+import AdvancedHeroSection from "@/components/AdvancedHeroSection";
 import ValueProposition from "@/components/ValueProposition";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhoWeServe from "@/components/WhoWeServe";
@@ -10,7 +10,7 @@ import ScrollAnimation from "@/components/ScrollAnimation";
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <HeroSection />
+      <AdvancedHeroSection />
       <ScrollAnimation>
         <ValueProposition />
       </ScrollAnimation>
