@@ -9,13 +9,44 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useCountUp } from "@/hooks/useCountUp";
 import CustomButton from "@/components/ui/custom-button";
+import { useState, useEffect } from "react";
 
 const slides = ["/Sliding 1.jpg", "/slide2.jpg", "/slide3.jpg"];
 
+const textContent = [
+  {
+    title: "Discovering Endless Possibilities Through Research, Data & AI",
+    subtitle: "We help governments, businesses, and social impact organizations transform research and data into actionable intelligence through strategy, capacity building, advanced analytics, intelligent automation, and governance."
+  },
+  {
+    title: "Empowering Organizations with Data-Driven Insights",
+    subtitle: "From policy research to business intelligence, we deliver practical solutions that turn complex data into clear, actionable strategies for sustainable growth and impact."
+  },
+  {
+    title: "Building the Future Through Ethical AI & Analytics",
+    subtitle: "Our comprehensive approach combines technical expertise with regulatory awareness, enabling confident decision-making in today's complex digital landscape."
+  }
+];
+
 const HeroSection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  
   const projectsCounter = useCountUp({ end: 500, duration: 2500, suffix: "+" });
   const organizationsCounter = useCountUp({ end: 50, duration: 2000, suffix: "+" });
   const satisfactionCounter = useCountUp({ end: 95, duration: 2200, suffix: "%" });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+        setIsAnimating(false);
+      }, 300);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero">
       <Carousel
