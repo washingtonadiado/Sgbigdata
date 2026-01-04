@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/card";
 import { ArrowRight, BarChart3, Brain, GraduationCap, Search, Shield } from "lucide-react";
 import CustomButton from "@/components/ui/custom-button";
+import Icon3D from "@/components/ui/icon-3d";
 
 const WhatWeDo = () => {
   const services = [
@@ -95,8 +96,12 @@ const WhatWeDo = () => {
             <Card key={index} className="flex flex-col border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture">
               <CardHeader>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <service.icon className="w-6 h-6 text-primary" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/5 flex items-center justify-center flex-shrink-0">
+                    <Icon3D 
+                      icon={service.icon} 
+                      size="lg" 
+                      variant="primary"
+                    />
                   </div>
                   <div className="flex-1">
                     <CardTitle className="text-xl mb-2">{service.title}</CardTitle>

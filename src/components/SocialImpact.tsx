@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Users, Shield, Globe } from "lucide-react";
+import Icon3D from "@/components/ui/icon-3d";
 import { useCountUp } from "@/hooks/useCountUp";
 
 const SocialImpact = () => {
@@ -47,8 +48,13 @@ const SocialImpact = () => {
           {principles.map((principle, index) => (
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture">
               <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                  <principle.icon className="w-8 h-8 text-primary" />
+                <div className="w-20 h-20 rounded-full bg-primary/5 flex items-center justify-center mb-4 mx-auto">
+                  <Icon3D 
+                    icon={principle.icon} 
+                    size="xl" 
+                    variant="primary"
+                    className="icon-3d-float"
+                  />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">
                   {principle.title}

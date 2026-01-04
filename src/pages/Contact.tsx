@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import Icon3D from "@/components/ui/icon-3d";
+import Icon3DHero from "@/components/ui/icon-3d-hero";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -145,10 +147,15 @@ const Contact = () => {
                 {/* Headquarters */}
                 <div>
                   <h3 className="text-xl font-bold text-foreground mb-6">Headquarters</h3>
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-primary" />
+                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                        <Icon3DHero 
+                          icon={MapPin} 
+                          size="lg" 
+                          variant="primary"
+                          animated={true}
+                        />
                       </div>
                       <div>
                         <p className="text-foreground font-medium">Purshottam Place,</p>
@@ -157,19 +164,29 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-5 h-5 text-primary" />
+                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                        <Icon3DHero 
+                          icon={Phone} 
+                          size="lg" 
+                          variant="primary"
+                          animated={true}
+                        />
                       </div>
-                      <a href="tel:+254793859234" className="text-foreground hover:text-primary transition-colors">
+                      <a href="tel:+254793859234" className="text-foreground hover:text-primary transition-colors text-lg">
                         +254 793-859-234
                       </a>
                     </div>
                     
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-primary" />
+                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                        <Icon3DHero 
+                          icon={Mail} 
+                          size="lg" 
+                          variant="primary"
+                          animated={true}
+                        />
                       </div>
-                      <a href="mailto:info@sgbigdata.com" className="text-foreground hover:text-primary transition-colors">
+                      <a href="mailto:info@sgbigdata.com" className="text-foreground hover:text-primary transition-colors text-lg">
                         info@sgbigdata.com
                       </a>
                     </div>
@@ -182,30 +199,42 @@ const Contact = () => {
                   <p className="text-muted-foreground mb-6">
                     We operate a lot of offices all over the world.
                   </p>
-                  <div className="flex gap-4">
+                  <div className="flex gap-6">
                     <a
                       href="https://facebook.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
-                      <Facebook className="w-5 h-5" />
+                      <Icon3D 
+                        icon={Facebook} 
+                        size="md" 
+                        variant="primary"
+                      />
                     </a>
                     <a
                       href="https://twitter.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
-                      <Twitter className="w-5 h-5" />
+                      <Icon3D 
+                        icon={Twitter} 
+                        size="md" 
+                        variant="primary"
+                      />
                     </a>
                     <a
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
-                      <Linkedin className="w-5 h-5" />
+                      <Icon3D 
+                        icon={Linkedin} 
+                        size="md" 
+                        variant="primary"
+                      />
                     </a>
                   </div>
                 </div>

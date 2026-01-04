@@ -2,6 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Lightbulb, Search, TrendingUp, Shield, Heart } from "lucide-react";
 import CustomButton from "@/components/ui/custom-button";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import Icon3D from "@/components/ui/icon-3d";
+import Icon3DHero from "@/components/ui/icon-3d-hero";
 
 const coreValues = [
   { icon: CheckCircle, label: "Integrity", color: "text-primary" },
@@ -49,8 +51,13 @@ const About = () => {
               {/* Mission */}
               <Card>
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                    <Heart className="w-8 h-8 text-primary" />
+                  <div className="w-20 h-20 bg-primary/5 rounded-xl flex items-center justify-center mb-6">
+                    <Icon3DHero 
+                      icon={Heart} 
+                      size="xl" 
+                      variant="primary"
+                      animated={true}
+                    />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
                   <p className="text-muted-foreground text-lg leading-relaxed">
@@ -62,8 +69,13 @@ const About = () => {
               {/* Vision */}
               <Card>
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-6">
-                    <TrendingUp className="w-8 h-8 text-secondary" />
+                  <div className="w-20 h-20 bg-secondary/5 rounded-xl flex items-center justify-center mb-6">
+                    <Icon3DHero 
+                      icon={TrendingUp} 
+                      size="xl" 
+                      variant="secondary"
+                      animated={true}
+                    />
                   </div>
                   <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
                   <p className="text-muted-foreground text-lg leading-relaxed">
@@ -87,10 +99,15 @@ const About = () => {
               {coreValues.map((value, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-3 bg-card px-6 py-4 rounded-full border border-border shadow-md hover:shadow-lg transition-shadow"
+                  className="flex items-center gap-4 bg-card px-8 py-6 rounded-full border border-border shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                 >
-                  <value.icon className={`w-6 h-6 ${value.color}`} />
-                  <span className="font-semibold text-foreground">{value.label}</span>
+                  <Icon3D 
+                    icon={value.icon} 
+                    size="md" 
+                    variant={value.color.includes('primary') ? 'primary' : 'secondary'}
+                    className="icon-3d-float"
+                  />
+                  <span className="font-semibold text-foreground text-lg">{value.label}</span>
                 </div>
               ))}
             </div>
@@ -110,9 +127,16 @@ const About = () => {
             </p>
             <div className="max-w-3xl mx-auto space-y-4">
               {whyChooseUs.map((item, index) => (
-                <Card>
-                  <CardContent className="p-5 flex items-start gap-4">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                  <CardContent className="p-6 flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <Icon3D 
+                        icon={CheckCircle} 
+                        size="md" 
+                        variant="primary"
+                        className="mt-1"
+                      />
+                    </div>
                     <span className="text-foreground text-lg">{item}</span>
                   </CardContent>
                 </Card>

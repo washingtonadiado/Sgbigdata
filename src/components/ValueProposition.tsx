@@ -1,5 +1,6 @@
 import CustomButton from "@/components/ui/custom-button";
 import { Landmark, Globe, FlaskConical } from "lucide-react";
+import Icon3D from "@/components/ui/icon-3d";
 
 const ValueProposition = () => {
   const propositions = [
@@ -40,8 +41,13 @@ const ValueProposition = () => {
             <div className="space-y-6">
               {propositions.map((proposition, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <proposition.icon className="w-6 h-6 text-primary" />
+                  <div className="w-16 h-16 rounded-lg bg-primary/5 flex items-center justify-center mr-4 flex-shrink-0">
+                    <Icon3D 
+                      icon={proposition.icon} 
+                      size="lg" 
+                      variant="primary"
+                      className="icon-3d-float"
+                    />
                   </div>
                   <p className="text-muted-foreground">
                     {proposition.text}

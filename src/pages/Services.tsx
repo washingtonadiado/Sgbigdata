@@ -3,6 +3,7 @@ import { BarChart3, Database, Shield, Bot, GraduationCap, FlaskConical, CheckCir
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import ScrollAnimation from "@/components/ScrollAnimation";
+import Icon3D from "@/components/ui/icon-3d";
 
 const services = [
   {
@@ -107,8 +108,13 @@ const Services = () => {
                 >
                   <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-14 h-14 bg-teal/10 rounded-xl flex items-center justify-center">
-                        <service.icon className="w-7 h-7 text-teal" />
+                      <div className="w-18 h-18 bg-teal/5 rounded-xl flex items-center justify-center">
+                        <Icon3D 
+                          icon={service.icon} 
+                          size="xl" 
+                          variant="primary"
+                          className="icon-3d-float"
+                        />
                       </div>
                       <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                         {service.title}

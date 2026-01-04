@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Building2, Users, Heart, GraduationCap } from "lucide-react";
+import Icon3D from "@/components/ui/icon-3d";
 
 const WhoWeServe = () => {
   const audiences = [
@@ -52,8 +53,13 @@ const WhoWeServe = () => {
               className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture"
             >
               <CardHeader>
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
-                  <audience.icon className="w-8 h-8 text-primary" />
+                <div className="w-20 h-20 rounded-2xl bg-primary/5 flex items-center justify-center mb-4">
+                  <Icon3D 
+                    icon={audience.icon} 
+                    size="xl" 
+                    variant="primary"
+                    className="icon-3d-float"
+                  />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {audience.title}
