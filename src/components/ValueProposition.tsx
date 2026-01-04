@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Globe, Shield, TrendingUp } from "lucide-react";
+import CustomButton from "@/components/ui/custom-button";
 
 const ValueProposition = () => {
   const benefits = [
@@ -65,6 +66,11 @@ const ValueProposition = () => {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="mt-8">
+              <CustomButton href="/training" size="lg">
+                Get Trained
+              </CustomButton>
             </div>
           </div>
         </div>
