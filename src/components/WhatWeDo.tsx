@@ -21,7 +21,7 @@ const WhatWeDo = () => {
         "Quantitative, qualitative, and mixed methods data analysis",
         "Research reporting and insight visualization"
       ],
-      results: "Helped 15+ government agencies improve policy outcomes by 40%"
+
     },
     {
       icon: BarChart3,
@@ -35,7 +35,7 @@ const WhatWeDo = () => {
         "Executive-ready reporting and insight storytelling",
         "Data quality assessment and optimization"
       ],
-      results: "Increased decision-making speed by 60% for 25+ enterprises"
+
     },
     {
       icon: GraduationCap,
@@ -48,7 +48,7 @@ const WhatWeDo = () => {
         "AI literacy and digital transformation workshops",
         "Custom learning pathways"
       ],
-      results: "Trained 1000+ professionals across 30+ organizations"
+
     },
     {
       icon: Brain,
@@ -62,7 +62,7 @@ const WhatWeDo = () => {
         "AI model training",
         "Automation and decision-support solutions"
       ],
-      results: "Delivered 50+ AI solutions with 85% accuracy improvement"
+
     },
     {
       icon: Shield,
@@ -75,7 +75,7 @@ const WhatWeDo = () => {
         "Risk assessments and compliance support",
         "Alignment with global standards and local regulations"
       ],
-      results: "Achieved 100% compliance rate for 40+ organizations"
+
     }
   ];
 
@@ -122,9 +122,7 @@ const WhatWeDo = () => {
                   </ul>
                 </div>
                 
-                <div className="bg-primary/5 rounded-lg p-3 mb-4">
-                  <p className="text-sm font-medium text-primary">{service.results}</p>
-                </div>
+
 
                 <div className="flex gap-2">
                   <CustomButton href="/contact" size="sm" className="flex-1">
