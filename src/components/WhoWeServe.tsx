@@ -9,28 +9,28 @@ const WhoWeServe = () => {
       title: "Governments and Public Sector Institutions",
       description:
         "Supporting data-driven policymaking, service delivery optimization, and digital transformation initiatives.",
-      examples: "Policy research, citizen service analytics, digital governance frameworks"
+
     },
     {
       icon: Users,
       title: "Corporates",
       description:
         "Helping organizations leverage capacity building, research, analytics, AI, and governance to improve performance, manage risk, and scale responsibly.",
-      examples: "Business intelligence, risk management, AI implementation, compliance"
+
     },
     {
       icon: Heart,
       title: "Development Organizations and NGOs",
       description:
         "Providing research, monitoring, evaluation, capacity building, and data governance solutions for social impact and inclusion.",
-      examples: "Impact measurement, program evaluation, beneficiary analytics, donor reporting"
+
     },
     {
       icon: GraduationCap,
       title: "Academia and Research Institutions",
       description:
         "Partnering on scientific and applied research, data analysis, and capacity building initiatives.",
-      examples: "Research methodology, statistical analysis, publication support, grant applications"
+
     },
   ];
 
@@ -68,12 +68,7 @@ const WhoWeServe = () => {
                   {audience.description}
                 </p>
               </CardHeader>
-              <CardContent>
-                <div className="bg-muted rounded-lg p-4">
-                  <p className="text-sm font-medium text-foreground mb-2">Examples:</p>
-                  <p className="text-sm text-muted-foreground">{audience.examples}</p>
-                </div>
-              </CardContent>
+
             </Card>
           ))}
         </div>
