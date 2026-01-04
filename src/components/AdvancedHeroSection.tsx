@@ -5,8 +5,8 @@ import CustomButton from "@/components/ui/custom-button";
 const slides = [
   {
     image: "/Sliding 1.jpg",
-    title: "SG DATA",
-    subheading: "SG Big Data Research and Consulting",
+    title: "DISCOVER",
+    subheading: "Intelligence Beyond Data",
     description: "Discovering Endless Possibilities Through Research, Data & AI"
   },
   {
@@ -99,16 +99,16 @@ const AdvancedHeroSection = () => {
               
               {/* Statistics */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4" ref={projectsCounter.ref}>
-                  <div className="text-3xl font-bold text-white">{projectsCounter.value}</div>
+                <div className="bg-primary/20 rounded-lg p-4 border border-primary/30" ref={projectsCounter.ref}>
+                  <div className="text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{projectsCounter.value}</div>
                   <div className="text-white/80 text-sm">Projects Delivered</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4" ref={organizationsCounter.ref}>
-                  <div className="text-3xl font-bold text-white">{organizationsCounter.value}</div>
+                <div className="bg-secondary/20 rounded-lg p-4 border border-secondary/30" ref={organizationsCounter.ref}>
+                  <div className="text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{organizationsCounter.value}</div>
                   <div className="text-white/80 text-sm">Organizations Served</div>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4" ref={satisfactionCounter.ref}>
-                  <div className="text-3xl font-bold text-white">{satisfactionCounter.value}</div>
+                <div className="bg-navy/30 rounded-lg p-4 border border-navy/40" ref={satisfactionCounter.ref}>
+                  <div className="text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{satisfactionCounter.value}</div>
                   <div className="text-white/80 text-sm">Client Satisfaction</div>
                 </div>
               </div>
