@@ -29,6 +29,9 @@ const ValueProposition = () => {
 
           {/* Text content on the right */}
           <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+              WHY SG BIG DATA?
+            </h2>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Providing Insight Beyond Tomorrow
             </h2>
