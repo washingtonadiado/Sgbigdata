@@ -1,28 +1,19 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Globe, Shield, TrendingUp } from "lucide-react";
 import CustomButton from "@/components/ui/custom-button";
+import { Landmark, Globe, FlaskConical } from "lucide-react";
 
 const ValueProposition = () => {
-  const benefits = [
+  const propositions = [
     {
-      icon: TrendingUp,
-      title: "Build Internal Capability",
-      description: "Strengthen your team's data and research skills for long-term success"
-    },
-    {
-      icon: CheckCircle,
-      title: "Make Better Decisions",
-      description: "Transform complex data into clear, actionable insights leaders can trust"
-    },
-    {
-      icon: Shield,
-      title: "Operate with Confidence",
-      description: "Ensure ethical use, regulatory compliance, and sustainable practices"
+      icon: Landmark,
+      text: "We support governments, business enterprises, and social impact organizations through our core integrated service areas to deliver measurable results and long-term value."
     },
     {
       icon: Globe,
-      title: "Global Expertise, Local Compliance",
-      description: "Partner with us worldwide while meeting local regulatory requirements"
+      text: "We partner with our clients across the world to unlock value from data while ensuring ethical use, regulatory compliance, and long-term sustainability."
+    },
+    {
+      icon: FlaskConical,
+      text: "Our approach blends technical expertise, research rigor, and regulatory awareness, enabling clients to make confident, evidence-based decisions in complex digital environments."
     }
   ];
 
@@ -45,25 +36,16 @@ const ValueProposition = () => {
               and operate with confidence by delivering practical research, data, and strategy solutions aligned 
               to contemporary and future needs.
             </p>
-            <p className="text-base text-muted-foreground mb-8">
-              Our approach blends technical expertise, research rigor, and regulatory awareness, enabling clients 
-              to make confident, evidence-based decisions in complex digital environments.
-            </p>
             
             <div className="space-y-6">
-              {benefits.map((benefit, index) => (
+              {propositions.map((proposition, index) => (
                 <div key={index} className="flex items-start">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                    <benefit.icon className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                    <proposition.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-1">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {benefit.description}
-                    </p>
-                  </div>
+                  <p className="text-muted-foreground">
+                    {proposition.text}
+                  </p>
                 </div>
               ))}
             </div>
