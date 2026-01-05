@@ -42,15 +42,15 @@ const ValueProposition = () => {
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative">
                   <div className="experience-badge rounded-2xl p-4">
-                    <span className="text-2xl md:text-3xl font-black text-foreground relative z-10">Since</span>
+                    <span className="text-xl md:text-2xl font-black text-foreground relative z-10">Since</span>
                   </div>
                   <div className="experience-dot absolute -top-2 -right-2 w-6 h-6 rounded-full border-4 border-background"></div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
+                  <div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
                     2022 from our
                   </div>
-                  <div className="text-2xl md:text-3xl font-semibold text-primary">
+                  <div className="text-xl md:text-2xl font-semibold text-primary">
                     experience
                   </div>
                 </div>
