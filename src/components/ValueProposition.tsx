@@ -1,6 +1,7 @@
 import CustomButton from "@/components/ui/custom-button";
 import { Landmark, Globe, FlaskConical } from "lucide-react";
 import Icon3D from "@/components/ui/icon-3d";
+import { Card, CardContent } from "@/components/ui/card";
 
 const ValueProposition = () => {
   const propositions = [
@@ -43,22 +44,26 @@ const ValueProposition = () => {
             
             <div className="space-y-6">
               {propositions.map((proposition, index) => (
-                <div key={index} className="flex items-start">
-                  <div className="w-16 h-16 rounded-lg bg-primary/5 flex items-center justify-center mr-4 flex-shrink-0">
-                    <Icon3D 
-                      icon={proposition.icon} 
-                      size="lg" 
-                      variant="primary"
-                      className="icon-3d-float"
-                    />
-                  </div>
-                  <p className="text-muted-foreground">
-                    {proposition.text}
-                  </p>
-                </div>
+                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture">
+                  <CardContent className="p-6">
+                    <div className="flex items-start">
+                      <div className="w-16 h-16 rounded-lg bg-primary/5 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Icon3D 
+                          icon={proposition.icon} 
+                          size="lg" 
+                          variant="primary"
+                          className="icon-3d-float"
+                        />
+                      </div>
+                      <p className="text-muted-foreground">
+                        {proposition.text}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
-            <div className="mt-8">
+            <div className="mt-8 text-center">
               <CustomButton href="/training" size="lg">
                 Get Trained
               </CustomButton>
