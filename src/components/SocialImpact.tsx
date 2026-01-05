@@ -5,7 +5,6 @@ import { useCountUp } from "@/hooks/useCountUp";
 
 const SocialImpact = () => {
   const complianceCounter = useCountUp({ end: 100, duration: 2000, suffix: "%" });
-  const impactCounter = useCountUp({ end: 75, duration: 2200, suffix: "%" });
   const initiativesCounter = useCountUp({ end: 40, duration: 1800, suffix: "+" });
   const principles = [
     {
@@ -68,14 +67,10 @@ const SocialImpact = () => {
         </div>
 
         <div className="bg-card rounded-2xl shadow-lg p-8 max-w-4xl mx-auto card-texture">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-2 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-primary mb-2">100%</div>
               <div className="text-sm text-muted-foreground">Ethical AI Framework Compliance</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary mb-2">75%</div>
-              <div className="text-sm text-muted-foreground">Projects with Social Impact Focus</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary mb-2">40+</div>
