@@ -35,12 +35,12 @@ const Contact = () => {
     <div className="min-h-screen bg-background">
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <section className="pt-24 sm:pt-32 pb-12 sm:pb-16 px-4 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto max-w-6xl text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
             Let's Work <span className="text-primary">Together</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Whether you're exploring data strategy, compliance, or AI, we'd love to hear from you. 
             Reach out and let's start a conversation about how we can support your goals.
           </p>
@@ -49,15 +49,15 @@ const Contact = () => {
 
       {/* Contact Form & Info Section */}
       <ScrollAnimation>
-        <section className="py-20 px-4">
+        <section className="py-12 sm:py-20 px-4">
           <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-20">
               {/* Contact Form */}
-              <div className="bg-card rounded-2xl p-8 md:p-10 shadow-lg border border-border">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+              <div className="bg-card rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg border border-border">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6 sm:mb-8">
                   Send Us a Message
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -70,7 +70,7 @@ const Contact = () => {
                         value={formData.firstName}
                         onChange={handleChange}
                         required
-                        className="bg-background"
+                        className="bg-background h-12"
                       />
                     </div>
                     <div>
@@ -84,7 +84,7 @@ const Contact = () => {
                         value={formData.lastName}
                         onChange={handleChange}
                         required
-                        className="bg-background"
+                        className="bg-background h-12"
                       />
                     </div>
                   </div>
@@ -101,7 +101,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="bg-background"
+                      className="bg-background h-12"
                     />
                   </div>
                   
@@ -116,7 +116,7 @@ const Contact = () => {
                       placeholder="Your Phone Number"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="bg-background"
+                      className="bg-background h-12"
                     />
                   </div>
                   
@@ -132,24 +132,24 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="bg-background resize-none"
+                      className="bg-background resize-none min-h-[120px]"
                     />
                   </div>
                   
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full h-12">
                     Send Message
                   </Button>
                 </form>
               </div>
 
               {/* Contact Information */}
-              <div className="space-y-10">
+              <div className="space-y-8 sm:space-y-10">
                 {/* Headquarters */}
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-6">Headquarters</h3>
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">Headquarters</h3>
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={MapPin} 
                           size="lg" 
@@ -158,13 +158,13 @@ const Contact = () => {
                         />
                       </div>
                       <div>
-                        <p className="text-foreground font-medium">Purshottam Place,</p>
-                        <p className="text-muted-foreground">Westlands, Nairobi, Kenya</p>
+                        <p className="text-foreground font-medium text-sm sm:text-base">Purshottam Place,</p>
+                        <p className="text-muted-foreground text-sm sm:text-base">Westlands, Nairobi, Kenya</p>
                       </div>
                     </div>
                     
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={Phone} 
                           size="lg" 
@@ -172,13 +172,13 @@ const Contact = () => {
                           animated={true}
                         />
                       </div>
-                      <a href="tel:+254793859234" className="text-foreground hover:text-primary transition-colors text-lg">
+                      <a href="tel:+254793859234" className="text-foreground hover:text-primary transition-colors text-base sm:text-lg">
                         +254 793-859-234
                       </a>
                     </div>
                     
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={Mail} 
                           size="lg" 
@@ -186,7 +186,7 @@ const Contact = () => {
                           animated={true}
                         />
                       </div>
-                      <a href="mailto:info@sgbigdata.com" className="text-foreground hover:text-primary transition-colors text-lg">
+                      <a href="mailto:info@sgbigdata.com" className="text-foreground hover:text-primary transition-colors text-base sm:text-lg break-all">
                         info@sgbigdata.com
                       </a>
                     </div>
@@ -195,20 +195,20 @@ const Contact = () => {
 
                 {/* Social Media */}
                 <div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">Social Media</h3>
-                  <p className="text-muted-foreground mb-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 sm:mb-4">Social Media</h3>
+                  <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
                     We operate a lot of offices all over the world.
                   </p>
-                  <div className="flex gap-6">
+                  <div className="flex gap-4 sm:gap-6">
                     <a
                       href="https://www.linkedin.com/company/sg-big-data-research-and-consulting/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
                       <Icon3D 
                         icon={Linkedin} 
-                        size="md" 
+                        size="sm" 
                         variant="primary"
                       />
                     </a>
@@ -216,11 +216,11 @@ const Contact = () => {
                       href="https://www.instagram.com/consult_sg/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
                       <Icon3D 
                         icon={Instagram} 
-                        size="md" 
+                        size="sm" 
                         variant="primary"
                       />
                     </a>
@@ -228,11 +228,11 @@ const Contact = () => {
                       href="https://x.com/consult_sg"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
                       <Icon3D 
                         icon={Twitter} 
-                        size="md" 
+                        size="sm" 
                         variant="primary"
                       />
                     </a>
@@ -240,11 +240,11 @@ const Contact = () => {
                       href="https://www.facebook.com/consult.sg.research"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                      className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
                       <Icon3D 
                         icon={Facebook} 
-                        size="md" 
+                        size="sm" 
                         variant="primary"
                       />
                     </a>
@@ -252,7 +252,7 @@ const Contact = () => {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="bg-muted rounded-2xl h-64 flex items-center justify-center border border-border overflow-hidden">
+                <div className="bg-muted rounded-2xl h-48 sm:h-64 flex items-center justify-center border border-border overflow-hidden">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.819088867455!2d36.8022!3d-1.2636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173c0a1f9de7%3A0xad2c84a8b1f12f0a!2sWestlands%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske"
                     width="100%"

@@ -128,14 +128,57 @@ const Navigation = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <NavLink to="/" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Home</NavLink>
-            <NavLink to="/training" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Training</NavLink>
-            <NavLink to="/services" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Services</NavLink>
-            <NavLink to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">About Us</NavLink>
-            <NavLink to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted" activeClassName="bg-muted">Contact Us</NavLink>
-            <div className="mt-4">
+        <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border">
+          <div className="px-4 pt-2 pb-4 space-y-2">
+            <NavLink to="/" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+              Home
+            </NavLink>
+            
+            {/* Mobile Training Dropdown */}
+            <div className="space-y-1">
+              <NavLink to="/training" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+                Training
+              </NavLink>
+              <div className="pl-6 space-y-1">
+                {trainingDropdown.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.href}
+                    className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            {/* Mobile Services Dropdown */}
+            <div className="space-y-1">
+              <NavLink to="/services" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+                Services
+              </NavLink>
+              <div className="pl-6 space-y-1">
+                {servicesDropdown.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.href}
+                    className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            
+            <NavLink to="/about" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+              About Us
+            </NavLink>
+            <NavLink to="/contact" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+              Contact Us
+            </NavLink>
+            <div className="pt-4 border-t border-border">
               <CustomButton href="/contact" size="md" className="w-full">
                 Book a Consultation
               </CustomButton>
