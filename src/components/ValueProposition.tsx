@@ -25,16 +25,18 @@ const ValueProposition = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image on the left */}
-          <div className="text-center">
-            <img src="/Value proposition.png" alt="Value Proposition" className="rounded-lg shadow-lg mx-auto" />
+          <div className="text-center md:text-left">
+            <EnhancedScrollAnimation animation="fadeLeft" duration={0.8}>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                WHY SG BIG DATA?
+              </h2>
+              <img src="/Value proposition.png" alt="Value Proposition" className="rounded-lg shadow-lg mx-auto md:mx-0 mt-4" />
+            </EnhancedScrollAnimation>
           </div>
 
           {/* Text content on the right */}
           <div>
             <EnhancedScrollAnimation animation="fadeRight" duration={0.8} delay={0.2}>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
-                WHY SG BIG DATA?
-              </h2>
               
               {/* Since 2022 Experience Section */}
               <div className="flex items-center gap-4 mb-6">

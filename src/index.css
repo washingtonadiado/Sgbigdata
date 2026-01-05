@@ -399,18 +399,18 @@ All colors MUST be HSL.
   }
 
   .experience-dot {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
-    box-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
+    background: linear-gradient(135deg, hsl(120 70% 40%) 0%, hsl(120 70% 40% / 0.8) 100%);
+    box-shadow: 0 2px 8px hsl(120 70% 40% / 0.3);
     animation: pulse-dot 2s ease-in-out infinite;
   }
 
   @keyframes pulse-dot {
     0%, 100% {
       transform: scale(1);
-      box-shadow: 0 2px 8px hsl(var(--primary) / 0.3);
+      box-shadow: 0 2px 8px hsl(120 70% 40% / 0.3);
     }
     50% {
       transform: scale(1.1);
-      box-shadow: 0 4px 12px hsl(var(--primary) / 0.5);
+      box-shadow: 0 4px 12px hsl(120 70% 40% / 0.5);
     }
   }
