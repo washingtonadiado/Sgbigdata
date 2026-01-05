@@ -84,17 +84,6 @@ const Testimonials = () => {
             </Card>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-6 py-3">
-            <div className="flex items-center gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <span className="text-sm font-medium text-foreground">4.9/5 Average Client Rating</span>
-          </div>
-        </div>
       </div>
     </section>
   );
