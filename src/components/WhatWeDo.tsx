@@ -4,7 +4,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, BarChart3, Brain, GraduationCap, Search, Shield } from "lucide-react";
+import { BarChart3, Brain, GraduationCap, Search, Shield } from "lucide-react";
 import CustomButton from "@/components/ui/custom-button";
 import Icon3D from "@/components/ui/icon-3d";
 
