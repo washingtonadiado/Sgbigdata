@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import Icon3D from "@/components/ui/icon-3d";
@@ -201,19 +201,31 @@ const Contact = () => {
                   </p>
                   <div className="flex gap-6">
                     <a
-                      href="https://facebook.com"
+                      href="https://www.linkedin.com/company/sg-big-data-research-and-consulting/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
                       <Icon3D 
-                        icon={Facebook} 
+                        icon={Linkedin} 
                         size="md" 
                         variant="primary"
                       />
                     </a>
                     <a
-                      href="https://twitter.com"
+                      href="https://www.instagram.com/consult_sg/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+                    >
+                      <Icon3D 
+                        icon={Instagram} 
+                        size="md" 
+                        variant="primary"
+                      />
+                    </a>
+                    <a
+                      href="https://x.com/consult_sg"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
@@ -225,13 +237,13 @@ const Contact = () => {
                       />
                     </a>
                     <a
-                      href="https://linkedin.com"
+                      href="https://www.facebook.com/consult.sg.research"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:-translate-y-1"
                     >
                       <Icon3D 
-                        icon={Linkedin} 
+                        icon={Facebook} 
                         size="md" 
                         variant="primary"
                       />
