@@ -8,24 +8,42 @@ const Testimonials = () => {
       role: "Director of Policy Research",
       organization: "Ministry of Health, Kenya",
       content: "SG Big Data transformed our approach to health policy research. Their evidence-based methodology helped us develop data-driven policies that improved healthcare delivery across 15 counties.",
-      rating: 5,
-      image: "/CEO.jpg"
+      rating: 5
     },
     {
       name: "Michael Chen",
       role: "Chief Data Officer",
       organization: "East Africa Bank",
       content: "The AI solutions and governance frameworks implemented by SG Big Data increased our decision-making accuracy by 85% while ensuring full regulatory compliance. Outstanding partnership.",
-      rating: 5,
-      image: "/C0-founder, managing director.jpg"
+      rating: 5
     },
     {
       name: "Dr. Amina Hassan",
       role: "Research Director",
       organization: "African Development Institute",
       content: "Their capacity building programs equipped our team with advanced analytics skills. The training was practical, comprehensive, and directly applicable to our development projects.",
-      rating: 5,
-      image: "/Operations Manager.jpg"
+      rating: 5
+    },
+    {
+      name: "James Ochieng",
+      role: "CEO",
+      organization: "TechStart Solutions",
+      content: "Working with SG Big Data revolutionized our business intelligence capabilities. Their custom dashboards and predictive analytics helped us increase revenue by 40% in just 8 months.",
+      rating: 5
+    },
+    {
+      name: "Dr. Grace Mwangi",
+      role: "Head of Research",
+      organization: "Kenya Agricultural Research Institute",
+      content: "The research methodology and data collection tools provided by SG Big Data enabled us to conduct comprehensive agricultural studies that informed national food security policies.",
+      rating: 5
+    },
+    {
+      name: "Robert Kiprotich",
+      role: "IT Director",
+      organization: "National Social Security Fund",
+      content: "SG Big Data's data governance and compliance advisory services helped us achieve full regulatory compliance while improving our data security framework. Exceptional expertise and professionalism.",
+      rating: 5
     }
   ];
 
@@ -41,7 +59,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture">
               <CardContent className="p-8">
@@ -57,17 +75,10 @@ const Testimonials = () => {
                   "{testimonial.content}"
                 </p>
                 
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
-                  <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                    <div className="text-sm text-primary font-medium">{testimonial.organization}</div>
-                  </div>
+                <div className="border-t pt-4">
+                  <div className="font-semibold text-foreground">{testimonial.name}</div>
+                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  <div className="text-sm text-primary font-medium">{testimonial.organization}</div>
                 </div>
               </CardContent>
             </Card>
