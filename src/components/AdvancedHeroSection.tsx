@@ -115,11 +115,11 @@ const AdvancedHeroSection = () => {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <CustomButton href="/contact" size="lg">
-                  Book a Consultation
+                <CustomButton href="/services" size="lg">
+                  Explore Solutions
                 </CustomButton>
-                <CustomButton href="/contact" variant="secondary" size="lg">
-                  Contact Us
+                <CustomButton href="/training" variant="secondary" size="lg">
+                  Discover More
                 </CustomButton>
               </div>
             </div>
