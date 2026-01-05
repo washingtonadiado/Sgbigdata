@@ -2,6 +2,7 @@ import CustomButton from "@/components/ui/custom-button";
 import { Landmark, Globe, FlaskConical } from "lucide-react";
 import Icon3D from "@/components/ui/icon-3d";
 import { Card, CardContent } from "@/components/ui/card";
+import EnhancedScrollAnimation from "@/components/EnhancedScrollAnimation";
 
 const ValueProposition = () => {
   const propositions = [
@@ -30,17 +31,38 @@ const ValueProposition = () => {
 
           {/* Text content on the right */}
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
-              WHY SG BIG DATA?
-            </h2>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Providing Insight Beyond Tomorrow
-            </h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              SG Big Data Research and Consulting helps clients build internal capability, make better decisions, 
-              and operate with confidence by delivering practical research, data, and strategy solutions aligned 
-              to contemporary and future needs.
-            </p>
+            <EnhancedScrollAnimation animation="fadeRight" duration={0.8} delay={0.2}>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                WHY SG BIG DATA?
+              </h2>
+              
+              {/* Since 2022 Experience Section */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative">
+                  <div className="experience-badge rounded-2xl p-4">
+                    <span className="text-2xl md:text-3xl font-black text-foreground relative z-10">Since</span>
+                  </div>
+                  <div className="experience-dot absolute -top-2 -right-2 w-6 h-6 rounded-full border-4 border-background"></div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-3xl md:text-4xl font-bold text-foreground mb-1">
+                    2022 from our
+                  </div>
+                  <div className="text-2xl md:text-3xl font-semibold text-primary">
+                    experience
+                  </div>
+                </div>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Providing Insight Beyond Tomorrow
+              </h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                SG Big Data Research and Consulting helps clients build internal capability, make better decisions, 
+                and operate with confidence by delivering practical research, data, and strategy solutions aligned 
+                to contemporary and future needs.
+              </p>
+            </EnhancedScrollAnimation>
             
             <div className="space-y-6">
               {propositions.map((proposition, index) => (
