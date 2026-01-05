@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useCountUp } from "@/hooks/useCountUp";
 import CustomButton from "@/components/ui/custom-button";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -21,6 +22,14 @@ const slides = [
     subheading: "Ethical AI & Innovation", 
     description: "Building Tomorrow Through Responsible Technology"
   }
+];
+
+const coreServices = [
+  "Research & Evidence-Based Advisory",
+  "Data Analytics and Business Intelligence",
+  "Training and Digital Skills Capacity Building",
+  "AI Solutions, Model Training, and Automation",
+  "Data Protection, Governance, and Compliance"
 ];
 
 const AdvancedHeroSection = () => {
@@ -140,6 +149,29 @@ const AdvancedHeroSection = () => {
       
       <div className="slider__control" onClick={prevSlide} />
       <div className="slider__control slider__control--right" onClick={nextSlide} />
+      
+      {/* Core Services Highlight */}
+      <div className="absolute bottom-0 left-0 right-0 bg-black/60 backdrop-blur-sm py-6 z-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-4">
+            <h3 className="text-white/90 text-sm font-semibold uppercase tracking-wider mb-3">
+              Core Services Overview
+            </h3>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {coreServices.map((service, index) => (
+              <Link
+                key={index}
+                to="/services"
+                className="text-white/90 hover:text-white text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 px-3 py-1 border-b border-transparent hover:border-white/50"
+                style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}
+              >
+                {service}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
