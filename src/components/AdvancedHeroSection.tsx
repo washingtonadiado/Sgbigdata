@@ -4,7 +4,7 @@ import CustomButton from "@/components/ui/custom-button";
 
 const slides = [
   {
-    image: "/Sliding 1.jpg",
+    image: "/slide1.jpg",
     title: "DISCOVER",
     subheading: "Intelligence Beyond Data",
     description: "Discovering Endless Possibilities Through Research, Data & AI"
