@@ -30,6 +30,9 @@ const ValueProposition = () => {
               <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
                 WHY SG BIG DATA?
               </h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Providing Insight Beyond Tomorrow
+              </h2>
               <img src="/Value proposition.png" alt="Value Proposition" className="rounded-lg shadow-lg mx-auto md:mx-0 mt-4" />
             </EnhancedScrollAnimation>
           </div>
@@ -37,28 +40,24 @@ const ValueProposition = () => {
           {/* Text content on the right */}
           <div>
             <EnhancedScrollAnimation animation="fadeRight" duration={0.8} delay={0.2}>
-              
               {/* Since 2022 Experience Section */}
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="relative">
-                  <div className="experience-badge rounded-2xl p-4">
-                    <span className="text-xl md:text-2xl font-black text-foreground relative z-10">Since</span>
+                  <div className="experience-badge rounded-xl p-3">
+                    <span className="text-2xl md:text-3xl font-black text-foreground relative z-10">Since</span>
                   </div>
-                  <div className="experience-dot absolute -top-2 -right-2 w-6 h-6 rounded-full border-4 border-background"></div>
+                  <div className="experience-dot absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-background"></div>
                 </div>
                 <div className="flex-1">
-                  <div className="text-2xl md:text-3xl font-bold text-foreground mb-1">
+                  <div className="text-xl md:text-2xl font-bold text-foreground mb-1">
                     2022 from our
                   </div>
-                  <div className="text-xl md:text-2xl font-semibold text-primary">
+                  <div className="text-lg md:text-xl font-semibold text-primary">
                     experience
                   </div>
                 </div>
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Providing Insight Beyond Tomorrow
-              </h2>
               <p className="text-lg text-muted-foreground mb-4">
                 SG Big Data Research and Consulting helps clients build internal capability, make better decisions, 
                 and operate with confidence by delivering practical research, data, and strategy solutions aligned 
