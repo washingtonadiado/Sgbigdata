@@ -201,7 +201,7 @@ ${formData.message}
                       <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={Mail} 
-                          size="lg" 
+                          size="md" 
                           variant="primary"
                           animated={true}
                         />
