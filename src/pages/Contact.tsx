@@ -173,7 +173,7 @@ const Contact = () => {
                         />
                       </div>
                       <a href="tel:+254793859234" className="text-foreground hover:text-primary transition-colors text-base sm:text-lg">
-                        +254 793-859-234
+                        +254 793 859 234
                       </a>
                     </div>
                     
