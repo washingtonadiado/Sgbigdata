@@ -98,18 +98,18 @@ const AdvancedHeroSection = () => {
               </p>
               
               {/* Statistics */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-12">
-                <div className="bg-primary/20 rounded-lg p-4 border border-primary/30" ref={projectsCounter.ref}>
-                  <div className="text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{projectsCounter.value}</div>
-                  <div className="text-white/80 text-sm">Projects Delivered</div>
+              <div className="grid grid-cols-3 md:grid-cols-3 gap-2 sm:gap-6 max-w-xs sm:max-w-3xl mx-auto mt-12">
+                <div className="bg-primary/20 rounded-lg p-2 sm:p-4 border border-primary/30" ref={projectsCounter.ref}>
+                  <div className="text-lg sm:text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{projectsCounter.value}</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Projects Delivered</div>
                 </div>
-                <div className="bg-secondary/20 rounded-lg p-4 border border-secondary/30" ref={organizationsCounter.ref}>
-                  <div className="text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{organizationsCounter.value}</div>
-                  <div className="text-white/80 text-sm">Organizations Served</div>
+                <div className="bg-secondary/20 rounded-lg p-2 sm:p-4 border border-secondary/30" ref={organizationsCounter.ref}>
+                  <div className="text-lg sm:text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{organizationsCounter.value}</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Organizations Served</div>
                 </div>
-                <div className="bg-navy/30 rounded-lg p-4 border border-navy/40" ref={satisfactionCounter.ref}>
-                  <div className="text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{satisfactionCounter.value}</div>
-                  <div className="text-white/80 text-sm">Client Satisfaction</div>
+                <div className="bg-navy/30 rounded-lg p-2 sm:p-4 border border-navy/40" ref={satisfactionCounter.ref}>
+                  <div className="text-lg sm:text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{satisfactionCounter.value}</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Client Satisfaction</div>
                 </div>
               </div>
 
