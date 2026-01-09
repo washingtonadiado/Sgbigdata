@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { courses } from '@/data/courses';
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -150,9 +150,11 @@ const CourseDetail = () => {
             <aside className="lg:col-span-1">
                 <div className="sticky top-24">
                     <img src={course.thumbnail} alt={course.title} className="rounded-lg w-full h-auto object-cover mb-6 shadow-lg" />
-                    <Button size="lg" className="w-full rounded-full">
-                        Enquire About This Course
-                    </Button>
+                    <Link to="/contact" className="w-full">
+                        <Button size="lg" className="w-full rounded-full">
+                            Enquire About This Course
+                        </Button>
+                    </Link>
                 </div>
             </aside>
 

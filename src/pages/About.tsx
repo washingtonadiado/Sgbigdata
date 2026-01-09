@@ -14,7 +14,7 @@ const coreValues = [
 ];
 
 const whyChooseUs = [
-  "Deep understanding of African data compliance frameworks",
+  "Deep understanding of global data compliance frameworks",
   "Blending strategy, analytics, and AI in one team",
   "SME-friendly packages and enterprise-ready tools",
   "Thoughtful, jargon-free communication",
@@ -79,7 +79,7 @@ const About = () => {
                   </div>
                   <h2 className="text-2xl font-bold text-foreground mb-4">Our Vision</h2>
                   <p className="text-muted-foreground text-lg leading-relaxed">
-                    To be Africa's most trusted partner in data-driven decision-making and AI transformation.
+                    To be global most trusted partner in data-driven decision-making and AI transformation.
                   </p>
                 </CardContent>
               </Card>
