@@ -419,13 +419,18 @@ All colors MUST be HSL.
 /* Hero Section Mobile Optimizations */
 @media (max-width: 768px) {
   .slider {
-    height: 70vh !important;
-    min-height: 500px;
+    height: 100vh !important;
+    min-height: 100vh;
   }
   
   .slider__slide-content {
-    padding: 1rem !important;
+    padding: 2rem 1rem !important;
     text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .slider__slide-heading {
@@ -763,5 +768,61 @@ All colors MUST be HSL.
   .slider__control:hover {
     opacity: 1 !important;
     background: hsl(var(--primary) / 0.9) !important;
+  }
+}
+/* Full Screen Mobile Hero Optimizations */
+@media (max-width: 768px) {
+  .slider__slide-content {
+    padding-top: 4rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .slider__slide-heading {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .slider__slide-subheading {
+    margin-bottom: 1rem !important;
+  }
+  
+  .slider__slide-readmore {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 100vh !important;
+    min-height: 100vh !important;
+  }
+  
+  .slider__slide-content {
+    padding: 3rem 1rem 1.5rem !important;
+    height: 100vh;
+    justify-content: space-between;
+  }
+  
+  .slider__slide-content > * {
+    flex-shrink: 0;
+  }
+  
+  .slider__slide-content .grid {
+    margin-top: auto !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .slider__slide-content .flex {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Ensure no overflow issues */
+@media (max-width: 768px) {
+  body, html {
+    overflow-x: hidden;
+  }
+  
+  .slider__slide {
+    overflow: hidden;
   }
 }
