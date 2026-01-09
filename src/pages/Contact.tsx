@@ -20,10 +20,30 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Create email content
+    const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+    const body = `
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Message:
+${formData.message}
+    `;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:washingtonowade200@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Email Client Opened!",
+      description: "Your default email client should open with the message pre-filled.",
     });
+    
+    // Clear form
     setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
   };
 
@@ -149,10 +169,10 @@ const Contact = () => {
                   <h3 className="text-lg sm:text-xl font-bold text-foreground mb-4 sm:mb-6">Headquarters</h3>
                   <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-start gap-3 sm:gap-4">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={MapPin} 
-                          size="lg" 
+                          size="md" 
                           variant="primary"
                           animated={true}
                         />
@@ -164,10 +184,10 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={Phone} 
-                          size="lg" 
+                          size="md" 
                           variant="primary"
                           animated={true}
                         />
@@ -178,7 +198,7 @@ const Contact = () => {
                     </div>
                     
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/5 flex items-center justify-center flex-shrink-0">
                         <Icon3DHero 
                           icon={Mail} 
                           size="lg" 
