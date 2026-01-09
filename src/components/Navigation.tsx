@@ -14,7 +14,8 @@ const Navigation = () => {
     { name: "Data Analytics & Business Intelligence", href: "/services" },
     { name: "Training & Digital Skills Capacity Building", href: "/services" },
     { name: "AI Solutions, Model Training & Automation", href: "/services" },
-    { name: "Data Protection, Governance & Compliance", href: "/services" }
+    { name: "Data Protection, Governance & Compliance", href: "/services" },
+    { name: "Enterprise Risk Strategy & Management", href: "/services" }
   ];
 
   const trainingDropdown = [

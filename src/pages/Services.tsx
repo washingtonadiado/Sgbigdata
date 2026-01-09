@@ -63,6 +63,20 @@ const services = [
       "Risk assessments and compliance support",
       "Alignment with global standards and local regulations"
     ],
+  },
+  {
+    icon: Shield,
+    title: "Enterprise Risk Strategy and Management",
+    description: "SG Big Data Research & Consulting supports organizations in identifying, assessing, and managing enterprise risks in an increasingly complex digital, regulatory, and data-driven environment. We help leaders move from reactive risk management to a proactive, intelligence-led approach that protects value, strengthens resilience, and enables confident decision-making.",
+    includes: [
+      "Enterprise risk framework design",
+      "Risk identification and assessment",
+      "Risk analytics and intelligence",
+      "Data, technology, and digital risk",
+      "Risk strategy integration",
+      "Training and capacity building"
+    ],
+    methodology: "We apply a structured, evidence-based methodology: Diagnose the organization's risk maturity and context, Design tailored ERM frameworks and risk models, Embed analytics, governance, and reporting into operations, Enable teams through training and knowledge transfer. This ensures risk management becomes a strategic enabler, not a compliance exercise."
   }
 ];
 
@@ -129,6 +143,15 @@ const Services = () => {
                         ))}
                       </ul>
                     </div>
+
+                    {service.methodology && (
+                      <div className="mb-4 p-3 bg-primary/5 rounded-lg">
+                        <h4 className="font-semibold text-sm text-foreground mb-2">Our Methodology:</h4>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {service.methodology}
+                        </p>
+                      </div>
+                    )}
 
                     <div className="flex gap-2">
                       <CustomButton href="/contact" size="sm" className="flex-1">

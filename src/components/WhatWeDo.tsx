@@ -30,13 +30,18 @@ const WhatWeDo = () => {
       icon: Shield,
       title: "Data Protection, Governance, and Compliance",
       description: "Build trusted data environments with strong governance frameworks and compliance support."
+    },
+    {
+      icon: Shield,
+      title: "Enterprise Risk Strategy and Management",
+      description: "Proactive, intelligence-led risk management that protects value and strengthens resilience."
     }
   ];
 
   return (
     <section className="py-20 bg-muted" id="services">
       <div className="container mx-auto px-4">
-        <EnhancedScrollAnimation animation="fadeInUp" delay={0.1}>
+        <EnhancedScrollAnimation animation="fadeUp" delay={0.1}>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
               Core Services Overview
@@ -51,7 +56,7 @@ const WhatWeDo = () => {
           {services.map((service, index) => (
             <EnhancedScrollAnimation 
               key={index} 
-              animation="slideInUp" 
+              animation="slideUp" 
               delay={0.1 + (index * 0.1)}
             >
               <Link to="/services" className="group block h-full">
