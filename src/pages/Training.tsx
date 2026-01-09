@@ -20,10 +20,10 @@ const Training = () => {
               Professional <span className="text-primary">Courses</span>
             </h1>
             <p className="text-xl mb-4">
-              Transform your career with practical, hands-on training programs designed for professionals across Africa.
+              Transform your career with practical, hands-on training programs designed for professionals across industries.
             </p>
             <p>
-              {courses.length} courses available • Expert instructors • Real-world case studies
+               Courses available • Expert instructors • Real-world case studies
             </p>
           </div>
         </div>

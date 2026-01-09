@@ -74,8 +74,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-lg">Contact Information</h4>
             <ul className="space-y-2 text-card-foreground/80">
-              <li>Email: info@sgbigdata.com</li>
-              <li>Phone: +254 XXX XXX XXX</li>
+              <li>Email: <a href="mailto:info@sgbigdata.com" className="hover:text-primary transition-colors">info@sgbigdata.com</a></li>
+              <li>Phone: <a href="tel:+254793859234" className="hover:text-primary transition-colors">+254 793-859-234</a></li>
               <li>Location: Nairobi, Kenya</li>
             </ul>
           </div>
