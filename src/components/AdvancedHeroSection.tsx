@@ -28,7 +28,7 @@ const AdvancedHeroSection = () => {
   const [isReady, setIsReady] = useState(false);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
   
-  const projectsCounter = useCountUp({ end: 50, duration: 2500, suffix: "+" });
+  const projectsCounter = useCountUp({ end: 500, duration: 2500, suffix: "+" });
   const organizationsCounter = useCountUp({ end: 50, duration: 2000, suffix: "+" });
   const satisfactionCounter = useCountUp({ end: 98, duration: 2200, suffix: "%" });
 

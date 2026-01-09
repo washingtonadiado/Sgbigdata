@@ -25,14 +25,8 @@ const ValueProposition = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image on the left */}
-          <div className="text-center md:text-left">
+          <div>
             <EnhancedScrollAnimation animation="fadeLeft" duration={0.8}>
-              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
-                WHY SG BIG DATA?
-              </h2>
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Providing Insight Beyond Tomorrow
-              </h2>
               <img src="/Value proposition.png" alt="Value Proposition" className="rounded-lg shadow-lg mx-auto md:mx-0 mt-4" />
             </EnhancedScrollAnimation>
           </div>
@@ -40,24 +34,12 @@ const ValueProposition = () => {
           {/* Text content on the right */}
           <div>
             <EnhancedScrollAnimation animation="fadeRight" duration={0.8} delay={0.2}>
-              {/* Since 2022 Experience Section */}
-              <div className="flex items-center gap-3 mb-4">
-                <div className="relative">
-                  <div className="experience-badge rounded-xl p-3">
-                    <span className="text-2xl md:text-3xl font-black text-foreground relative z-10">Since</span>
-                  </div>
-                  <div className="experience-dot absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-background"></div>
-                </div>
-                <div className="flex-1">
-                  <div className="text-xl md:text-2xl font-bold text-foreground mb-1">
-                    2022 from our
-                  </div>
-                  <div className="text-lg md:text-xl font-semibold text-primary">
-                    experience
-                  </div>
-                </div>
-              </div>
-              
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                WHY SG BIG DATA?
+              </h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+                Providing Insight Beyond Tomorrow
+              </h2>
               <p className="text-lg text-muted-foreground mb-4">
                 SG Big Data Research and Consulting helps clients build internal capability, make better decisions, 
                 and operate with confidence by delivering practical research, data, and strategy solutions aligned 
@@ -86,11 +68,7 @@ const ValueProposition = () => {
                 </Card>
               ))}
             </div>
-            <div className="mt-8 text-center">
-              <CustomButton href="/training" size="lg">
-                Get Trained
-              </CustomButton>
-            </div>
+
           </div>
         </div>
       </div>
