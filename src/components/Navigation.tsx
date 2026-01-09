@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/NavLink";
 import { ThemeSwitcher } from "./ThemeSwitcher";
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   const servicesDropdown = [
     { name: "Research & Evidence-Based Advisory", href: "/services" },
@@ -26,12 +27,41 @@ const Navigation = () => {
     { name: "Custom Learning Pathways", href: "/training" }
   ];
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, []);
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img src="/Logo Horizontal.png" alt="SG Big Data Logo" className="h-12" />
-
         </div>
         
         <div className="hidden md:flex items-center gap-8 ml-auto">
@@ -118,9 +148,10 @@ const Navigation = () => {
           </div>
           <div className="md:hidden">
             <Button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={handleMenuToggle}
               variant="ghost"
               size="icon"
+              aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -131,58 +162,57 @@ const Navigation = () => {
       {isOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-sm border-t border-border">
           <div className="px-4 pt-2 pb-4 space-y-2">
-            <NavLink to="/" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+            <NavLink 
+              to="/" 
+              className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" 
+              activeClassName="bg-muted text-primary"
+              onClick={closeMenu}
+            >
               Home
             </NavLink>
             
-            {/* Mobile Training Dropdown */}
-            <div className="space-y-1">
-              <NavLink to="/training" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
-                Training
-              </NavLink>
-              <div className="pl-6 space-y-1">
-                {trainingDropdown.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.href}
-                    className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <NavLink 
+              to="/training" 
+              className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" 
+              activeClassName="bg-muted text-primary"
+              onClick={closeMenu}
+            >
+              Training
+            </NavLink>
             
-            {/* Mobile Services Dropdown */}
-            <div className="space-y-1">
-              <NavLink to="/services" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
-                Services
-              </NavLink>
-              <div className="pl-6 space-y-1">
-                {servicesDropdown.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.href}
-                    className="block px-3 py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <NavLink 
+              to="/services" 
+              className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" 
+              activeClassName="bg-muted text-primary"
+              onClick={closeMenu}
+            >
+              Services
+            </NavLink>
             
-            <NavLink to="/about" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+            <NavLink 
+              to="/about" 
+              className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" 
+              activeClassName="bg-muted text-primary"
+              onClick={closeMenu}
+            >
               About Us
             </NavLink>
-            <NavLink to="/contact" className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" activeClassName="bg-muted text-primary">
+            
+            <NavLink 
+              to="/contact" 
+              className="block px-3 py-3 rounded-md text-base font-medium text-foreground hover:bg-muted transition-colors" 
+              activeClassName="bg-muted text-primary"
+              onClick={closeMenu}
+            >
               Contact Us
             </NavLink>
+            
             <div className="pt-4 border-t border-border">
-              <CustomButton href="/contact" size="md" className="w-full">
-                Book a Consultation
-              </CustomButton>
+              <Link to="/contact" onClick={closeMenu}>
+                <Button size="lg" className="w-full">
+                  Book a Consultation
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
