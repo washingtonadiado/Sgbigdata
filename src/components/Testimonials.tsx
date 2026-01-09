@@ -47,6 +47,9 @@ const Testimonials = () => {
     }
   ];
 
+  // Duplicate testimonials for seamless infinite scroll
+  const duplicatedTestimonials = [...testimonials, ...testimonials];
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -59,38 +62,45 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                
-                <Quote className="w-8 h-8 text-primary/20 mb-4" />
-                
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  "{testimonial.content}"
-                </p>
-                
-                <div className="border-t pt-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
-                      <span className="text-primary font-semibold text-sm">
-                        {testimonial.organization.split(' ').map(n => n[0]).join('')}
-                      </span>
+        {/* Continuous Sliding Testimonials */}
+        <div className="relative max-w-7xl mx-auto overflow-hidden">
+          <div className="testimonials-scroll flex gap-6">
+            {duplicatedTestimonials.map((testimonial, index) => (
+              <div 
+                key={index} 
+                className="flex-shrink-0 w-80 sm:w-96"
+              >
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 card-texture h-full">
+                  <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
+                      ))}
                     </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                      <div className="text-sm text-primary font-medium">{testimonial.organization}</div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                    
+                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-primary/20 mb-4" />
+                    
+                    <p className="text-muted-foreground leading-relaxed mb-6 flex-grow text-sm sm:text-base">
+                      "{testimonial.content}"
+                    </p>
+                    
+                                        <div className="border-t pt-4">       
+                                          <div className="flex items-center gap-3">
+                                            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
+                                              <span className="text-primary font-semibold text-xs sm:text-sm">
+                                                {testimonial.organization.split(' ').map(n => n[0]).join('')}
+                                              </span>
+                                            </div>
+                                            <div>
+                                              <div className="text-xs sm:text-sm text-muted-foreground">{testimonial.role}</div>
+                                              <div className="text-xs sm:text-sm text-primary font-medium">{testimonial.organization}</div>
+                                            </div>
+                                          </div>
+                                        </div>                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

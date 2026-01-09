@@ -620,3 +620,80 @@ All colors MUST be HSL.
     transform: none !important;
   }
 }
+/* Testimonials Continuous Scroll Animation */
+.testimonials-scroll {
+  animation: scroll-testimonials 30s linear infinite;
+  width: fit-content;
+}
+
+.testimonials-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-testimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive testimonial card widths */
+@media (max-width: 640px) {
+  .testimonials-scroll .flex-shrink-0 {
+    width: 280px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .testimonials-scroll .flex-shrink-0 {
+    width: 320px !important;
+  }
+}
+
+/* Testimonials Carousel Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .testimonials-carousel .flex {
+    transform: translateX(calc(-${currentIndex} * 50%)) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-carousel .flex {
+    transform: translateX(calc(-${currentIndex} * 100%)) !important;
+  }
+  
+  .testimonials-carousel .mx-12 {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+  }
+  
+  .testimonials-carousel .absolute.left-0 {
+    left: -1rem !important;
+  }
+  
+  .testimonials-carousel .absolute.right-0 {
+    right: -1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-carousel .mx-12 {
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+  
+  .testimonials-carousel .absolute.left-0 {
+    left: -0.5rem !important;
+  }
+  
+  .testimonials-carousel .absolute.right-0 {
+    right: -0.5rem !important;
+  }
+  
+  .testimonials-carousel .px-4 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
