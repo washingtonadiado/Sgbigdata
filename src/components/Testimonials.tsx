@@ -79,11 +79,10 @@ const Testimonials = () => {
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
                       <span className="text-primary font-semibold text-sm">
-                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        {testimonial.organization.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                     <div>
-                      <div className="font-semibold text-foreground">{testimonial.name}</div>
                       <div className="text-sm text-muted-foreground">{testimonial.role}</div>
                       <div className="text-sm text-primary font-medium">{testimonial.organization}</div>
                     </div>
