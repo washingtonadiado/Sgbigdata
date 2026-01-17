@@ -1,8 +1,75 @@
 import { Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { toast } = useToast();
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+
+  const handleNewsletterSubmit = async () => {
+    if (!newsletterEmail) {
+      toast({
+        title: "Email Required",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubscribing(true);
+    try {
+      console.log('Starting newsletter subscription...');
+      
+      const templateParams = {
+        from_name: 'Newsletter Subscriber',
+        from_email: newsletterEmail,
+        message: `New newsletter subscription request from: ${newsletterEmail}`,
+        phone: 'N/A',
+        to_name: 'SG Big Data Team',
+        reply_to: newsletterEmail,
+      };
+
+      console.log('Newsletter template params:', templateParams);
+
+      const response = await emailjs.send(
+        'service_77a3m8b',
+        'template_p2g0dbf',
+        templateParams,
+        'iSsIgKq-MSLH2GVgC'
+      );
+
+      console.log('Newsletter EmailJS response:', response);
+
+      if (response.status === 200) {
+        toast({
+          title: "Subscription Successful!",
+          description: "Thank you for subscribing to our newsletter.",
+        });
+        setNewsletterEmail('');
+      } else {
+        throw new Error(`EmailJS returned status: ${response.status}`);
+      }
+    } catch (error: any) {
+      console.error('Newsletter subscription error:', error);
+      
+      let errorMessage = "There was an error subscribing. Please try again.";
+      if (error.text) {
+        errorMessage = `EmailJS Error: ${error.text}`;
+      }
+      
+      toast({
+        title: "Subscription Failed",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
 
   return (
     <footer className="bg-card text-card-foreground" id="contact">
@@ -49,21 +116,17 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Enter your email" 
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
                 className="flex-1 px-3 py-2 rounded-lg border border-card-foreground/20 bg-background text-foreground text-sm focus:ring-2 focus:ring-primary focus:outline-none"
-                id="newsletter-email"
+                onKeyPress={(e) => e.key === 'Enter' && handleNewsletterSubmit()}
               />
               <button 
-                onClick={() => {
-                  const email = (document.getElementById('newsletter-email') as HTMLInputElement)?.value;
-                  if (email) {
-                    const subject = 'Newsletter Subscription Request';
-                    const body = `I would like to subscribe to your newsletter with this email: ${email}`;
-                    window.location.href = `mailto:info@sgbigdata.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                  }
-                }}
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors"
+                onClick={handleNewsletterSubmit}
+                disabled={isSubscribing}
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors disabled:opacity-50"
               >
-                Subscribe
+                {isSubscribing ? "..." : "Subscribe"}
               </button>
             </div>
           </div>

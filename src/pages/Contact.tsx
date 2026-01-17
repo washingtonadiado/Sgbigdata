@@ -7,9 +7,11 @@ import { useToast } from "@/hooks/use-toast";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import Icon3D from "@/components/ui/icon-3d";
 import Icon3DHero from "@/components/ui/icon-3d-hero";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,33 +20,95 @@ const Contact = () => {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Create email content
-    const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
-    const body = `
+    try {
+      console.log('Starting email send process...');
+      
+      // Fallback to mailto if EmailJS fails
+      const sendViaMailto = () => {
+        const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
+        const body = `
 Name: ${formData.firstName} ${formData.lastName}
 Email: ${formData.email}
-Phone: ${formData.phone}
+Phone: ${formData.phone || 'Not provided'}
 
 Message:
 ${formData.message}
-    `;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:washingtonowade200@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    toast({
-      title: "Email Client Opened!",
-      description: "Your default email client should open with the message pre-filled.",
-    });
-    
-    // Clear form
-    setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+        `;
+        
+        const mailtoLink = `mailto:washingtonowade200@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoLink;
+        
+        toast({
+          title: "Email Client Opened!",
+          description: "Your default email client should open with the message pre-filled.",
+        });
+      };
+
+      // Try EmailJS first, fallback to mailto
+      try {
+        // Prepare template parameters - match your EmailJS template exactly
+        const templateParams = {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          message: formData.message,
+          to_name: 'SG Big Data Team',
+          reply_to: formData.email,
+        };
+
+        console.log('Template params:', templateParams);
+
+        // Send email using EmailJS with explicit parameters
+        const response = await emailjs.send(
+          'service_77a3m8b',    // Service ID
+          'template_p2g0dbf',   // Template ID
+          templateParams,
+          'iSsIgKq-MSLH2GVgC'  // Correct Public Key
+        );
+
+        console.log('EmailJS response:', response);
+
+        if (response.status === 200) {
+          toast({
+            title: "Message Sent Successfully!",
+            description: "Thank you for contacting us. We'll get back to you within 24 hours.",
+          });
+          
+          // Clear form
+          setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+        } else {
+          throw new Error(`EmailJS returned status: ${response.status}`);
+        }
+      } catch (emailjsError: any) {
+        console.log('EmailJS failed, using mailto fallback:', emailjsError);
+        
+        if (emailjsError.text && emailjsError.text.includes('Invalid public key')) {
+          toast({
+            title: "EmailJS Configuration Issue",
+            description: "Using email client as fallback. Please update your EmailJS public key.",
+            variant: "destructive",
+          });
+        }
+        
+        // Use mailto as fallback
+        sendViaMailto();
+      }
+      
+    } catch (error: any) {
+      console.error('Contact form error:', error);
+      
+      toast({
+        title: "Failed to Send Message",
+        description: "Please contact us directly at washingtonowade200@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -156,8 +220,8 @@ ${formData.message}
                     />
                   </div>
                   
-                  <Button type="submit" size="lg" className="w-full h-12">
-                    Send Message
+                  <Button type="submit" size="lg" className="w-full h-12" disabled={isSubmitting}>
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </div>
