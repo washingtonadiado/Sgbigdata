@@ -28,8 +28,8 @@ const AdvancedHeroSection = () => {
   const [isReady, setIsReady] = useState(false);
   const [intervalId, setIntervalId] = useState<NodeJS.Timeout | null>(null);
   
-  const projectsCounter = useCountUp({ end: 500, duration: 2500, suffix: "+" });
-  const organizationsCounter = useCountUp({ end: 50, duration: 2000, suffix: "+" });
+  const projectsCounter = useCountUp({ end: 200, duration: 2500, suffix: "k+" });
+  const organizationsCounter = useCountUp({ end: 50, duration: 2000, suffix: "k+" });
   const satisfactionCounter = useCountUp({ end: 98, duration: 2200, suffix: "%" });
 
   // Function to start auto-advance
@@ -105,7 +105,7 @@ const AdvancedHeroSection = () => {
                 </div>
                 <div className="bg-secondary/20 rounded-lg p-2 sm:p-4 border border-secondary/30" ref={organizationsCounter.ref}>
                   <div className="text-lg sm:text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{organizationsCounter.value}</div>
-                  <div className="text-white/80 text-xs sm:text-sm">Organizations Served</div>
+                  <div className="text-white/80 text-xs sm:text-sm">Clients Served</div>
                 </div>
                 <div className="bg-navy/30 rounded-lg p-2 sm:p-4 border border-navy/40" ref={satisfactionCounter.ref}>
                   <div className="text-lg sm:text-3xl font-bold text-white" style={{ textShadow: 'none', filter: 'none' }}>{satisfactionCounter.value}</div>

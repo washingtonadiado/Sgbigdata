@@ -50,8 +50,19 @@ const Footer = () => {
                 type="email" 
                 placeholder="Enter your email" 
                 className="flex-1 px-3 py-2 rounded-lg border border-card-foreground/20 bg-background text-foreground text-sm focus:ring-2 focus:ring-primary focus:outline-none"
+                id="newsletter-email"
               />
-              <button className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors">
+              <button 
+                onClick={() => {
+                  const email = (document.getElementById('newsletter-email') as HTMLInputElement)?.value;
+                  if (email) {
+                    const subject = 'Newsletter Subscription Request';
+                    const body = `I would like to subscribe to your newsletter with this email: ${email}`;
+                    window.location.href = `mailto:info@sgbigdata.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                  }
+                }}
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors"
+              >
                 Subscribe
               </button>
             </div>

@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import WhatsAppChat from "@/components/WhatsAppChat";
 import Loader from "@/components/ui/Loader";
 import { usePageLoader } from "@/hooks/usePageLoader";
 
@@ -19,6 +20,7 @@ const Layout = ({ initialLoad }: { initialLoad: boolean }) => {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppChat />
     </>
   );
 };
