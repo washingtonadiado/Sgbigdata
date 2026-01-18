@@ -126,7 +126,7 @@ const Footer = () => {
                 disabled={isSubscribing}
                 className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors disabled:opacity-50"
               >
-                {isSubscribing} ? "..." : "Subscribe"}
+                {isSubscribing ? "..." : "Subscribe"}
               </button>
             </div>
           </div>
