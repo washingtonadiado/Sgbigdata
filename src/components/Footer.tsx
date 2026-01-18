@@ -89,10 +89,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-lg tracking-wider">Quick Links</h4>
             <ul className="space-y-3 text-card-foreground/80">
-              <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="/services" className="hover:text-primary transition-colors">Services</a></li>
-              <li><a href="/training" className="hover:text-primary transition-colors">Training</a></li>
-              <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-primary transition-colors">Services</Link></li>
+              <li><Link to="/training" className="hover:text-primary transition-colors">Training</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -126,7 +126,7 @@ const Footer = () => {
                 disabled={isSubscribing}
                 className="px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm hover:bg-primary/90 transition-colors disabled:opacity-50"
               >
-                {isSubscribing ? "..." : "Subscribe"}
+                {isSubscribing} ? "..." : "Subscribe"}
               </button>
             </div>
           </div>
@@ -138,8 +138,8 @@ const Footer = () => {
             &copy; {currentYear} SG Big Data Research and Consulting. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="/privacy-policy" className="text-sm text-card-foreground/60 hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="/terms-of-use" className="text-sm text-card-foreground/60 hover:text-primary transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="text-sm text-card-foreground/60 hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-use" className="text-sm text-card-foreground/60 hover:text-primary transition-colors">Terms of Service</Link>
             <div className="flex gap-4 ml-4">
               <a 
                 href="https://www.linkedin.com/company/sg-big-data-research-and-consulting/" 
