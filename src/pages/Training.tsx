@@ -71,7 +71,7 @@ const Training = () => {
                 Choose the learning format that best fits your schedule and learning style. We offer flexible options to accommodate different preferences and needs.
               </p>
             </div>
-
+    
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Virtual Classes */}
               <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-card">

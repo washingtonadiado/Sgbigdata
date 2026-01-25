@@ -6,42 +6,42 @@ const Testimonials = () => {
     {
       name: "Dr. Sarah Kimani",
       role: "Director of Policy Research",
-      organization: "Ministry of Health, Kenya",
+      organization: "A Kenyan Government Ministry",
       content: "SG Big Data transformed our approach to health policy research. Their evidence-based methodology helped us develop data-driven policies that improved healthcare delivery across 15 counties.",
       rating: 5
     },
     {
       name: "Michael Chen",
       role: "Chief Data Officer",
-      organization: "East Africa Bank",
+      organization: "An East African Bank",
       content: "The AI solutions and governance frameworks implemented by SG Big Data increased our decision-making accuracy by 85% while ensuring full regulatory compliance. Outstanding partnership.",
       rating: 5
     },
     {
       name: "Dr. Amina Hassan",
       role: "Research Director",
-      organization: "African Development Institute",
+      organization: "An African Development Institute",
       content: "Their capacity building programs equipped our team with advanced analytics skills. The training was practical, comprehensive, and directly applicable to our development projects.",
       rating: 5
     },
     {
       name: "James Ochieng",
       role: "CEO",
-      organization: "TechStart Solutions",
+      organization: "A Technology Company",
       content: "Working with SG Big Data revolutionized our business intelligence capabilities. Their custom dashboards and predictive analytics helped us increase revenue by 40% in just 8 months.",
       rating: 5
     },
     {
       name: "Dr. Grace Mwangi",
       role: "Head of Research",
-      organization: "Kenya Agricultural Research Institute",
+      organization: "An Agricultural Research Institute",
       content: "The research methodology and data collection tools provided by SG Big Data enabled us to conduct comprehensive agricultural studies that informed national food security policies.",
       rating: 5
     },
     {
       name: "Robert Kiprotich",
       role: "IT Director",
-      organization: "National Social Security Fund",
+      organization: "A Kenyan Government Institution",
       content: "SG Big Data's data governance and compliance advisory services helped us achieve full regulatory compliance while improving our data security framework. Exceptional expertise and professionalism.",
       rating: 5
     }
