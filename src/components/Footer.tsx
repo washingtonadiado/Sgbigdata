@@ -2,7 +2,6 @@ import { Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -20,50 +19,52 @@ const Footer = () => {
       return;
     }
 
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(newsletterEmail)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubscribing(true);
     try {
       console.log('Starting newsletter subscription...');
       
-      const templateParams = {
-        from_name: 'Newsletter Subscriber',
-        from_email: newsletterEmail,
-        message: `New newsletter subscription request from: ${newsletterEmail}`,
-        phone: 'N/A',
-        to_name: 'SG Big Data Team',
-        reply_to: newsletterEmail,
-      };
+      const scriptUrl = 'https://script.google.com/macros/s/AKfycbyBEFUIBbZZzraUPXNL069pt2UYrDIbsHXj0LsjVNi8kBsujLt3DlQS8MYBgRLJMvWh/exec';
 
-      console.log('Newsletter template params:', templateParams);
+      // Use no-cors mode to bypass CORS restrictions
+      const params = new URLSearchParams();
+      params.append('email', newsletterEmail);
 
-      const response = await emailjs.send(
-        'service_77a3m8b',
-        'template_p2g0dbf',
-        templateParams,
-        'iSsIgKq-MSLH2GVgC'
-      );
+      await fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: params.toString()
+      });
 
-      console.log('Newsletter EmailJS response:', response);
-
-      if (response.status === 200) {
-        toast({
-          title: "Subscription Successful!",
-          description: "Thank you for subscribing to our newsletter.",
-        });
-        setNewsletterEmail('');
-      } else {
-        throw new Error(`EmailJS returned status: ${response.status}`);
-      }
-    } catch (error: any) {
-      console.error('Newsletter subscription error:', error);
+      // Since we're using no-cors, we can't read the response
+      // But if no error is thrown, the request was sent successfully
+      console.log('Newsletter subscription request sent successfully');
       
-      let errorMessage = "There was an error subscribing. Please try again.";
-      if (error.text) {
-        errorMessage = `EmailJS Error: ${error.text}`;
-      }
+      toast({
+        title: "Subscription Successful!",
+        description: "Thank you for subscribing to our newsletter.",
+      });
+      setNewsletterEmail('');
+      
+    } catch (error: unknown) {
+      console.error('Newsletter subscription error:', error);
       
       toast({
         title: "Subscription Failed",
-        description: errorMessage,
+        description: "There was an error subscribing. Please try again later.",
         variant: "destructive",
       });
     } finally {
