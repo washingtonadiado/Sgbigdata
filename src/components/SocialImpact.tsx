@@ -69,11 +69,15 @@ const SocialImpact = () => {
         <div className="bg-card rounded-2xl shadow-lg p-8 max-w-4xl mx-auto card-texture">
           <div className="grid md:grid-cols-2 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">100%</div>
+              <div className="text-3xl font-bold text-primary mb-2" ref={complianceCounter.ref}>
+                {complianceCounter.value}
+              </div>
               <div className="text-sm text-muted-foreground">Ethical AI Framework Compliance</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-2">40+</div>
+              <div className="text-3xl font-bold text-primary mb-2" ref={initiativesCounter.ref}>
+                {initiativesCounter.value}
+              </div>
               <div className="text-sm text-muted-foreground">Inclusive Technology Initiatives</div>
             </div>
           </div>
