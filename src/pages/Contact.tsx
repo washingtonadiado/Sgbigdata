@@ -52,22 +52,21 @@ ${formData.message}
       try {
         // Prepare template parameters - match your EmailJS template exactly
         const templateParams = {
-          from_name: `${formData.firstName} ${formData.lastName}`,
+          first_name: formData.firstName,
+          last_name: formData.lastName,
           from_email: formData.email,
-          phone: formData.phone || 'Not provided',
+          phone_number: formData.phone || 'Not provided',
           message: formData.message,
-          to_name: 'SG Big Data Team',
-          reply_to: formData.email,
         };
 
         console.log('Template params:', templateParams);
 
         // Send email using EmailJS with explicit parameters
         const response = await emailjs.send(
-          'service_77a3m8b',    // Service ID
-          'template_p2g0dbf',   // Template ID
+          'service_rkz0o8p',    // Service ID (matches your SMTP config)
+          'template_0hcmdpd',   // Template ID
           templateParams,
-          'iSsIgKq-MSLH2GVgC'  // Correct Public Key
+          '9xGvwAjFSpdoSUtvK'   // Correct Public Key
         );
 
         console.log('EmailJS response:', response);

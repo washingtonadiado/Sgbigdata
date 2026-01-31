@@ -4,9 +4,9 @@
 
 Your contact form and newsletter subscription are now connected to EmailJS with the following configuration:
 
-- **Public Key**: iSsIgKq-MSLH2GVgC
-- **Service ID**: service_77a3m8b  
-- **Template ID**: template_p2g0dbf
+- **Public Key**: 9xGvwAjFSpdoSUtvK
+- **Service ID**: service_rkz0o8p  
+- **Template ID**: template_sm705s7
 
 ## Email Template Variables
 
