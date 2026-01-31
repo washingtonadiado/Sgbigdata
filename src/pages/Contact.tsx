@@ -25,8 +25,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Starting email send process...');
-      
       // Fallback to mailto if EmailJS fails
       const sendViaMailto = () => {
         const subject = `Contact Form Submission from ${formData.firstName} ${formData.lastName}`;
@@ -39,7 +37,7 @@ Message:
 ${formData.message}
         `;
         
-        const mailtoLink = `mailto:washingtonowade200@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:info@sgbigdata.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.location.href = mailtoLink;
         
         toast({
@@ -50,7 +48,6 @@ ${formData.message}
 
       // Try EmailJS first, fallback to mailto
       try {
-        // Prepare template parameters - match your EmailJS template exactly
         const templateParams = {
           first_name: formData.firstName,
           last_name: formData.lastName,
@@ -59,17 +56,12 @@ ${formData.message}
           message: formData.message,
         };
 
-        console.log('Template params:', templateParams);
-
-        // Send email using EmailJS with explicit parameters
         const response = await emailjs.send(
-          'service_rkz0o8p',    // Service ID (matches your SMTP config)
-          'template_0hcmdpd',   // Template ID
+          'service_rkz0o8p',
+          'template_0hcmdpd',
           templateParams,
-          '9xGvwAjFSpdoSUtvK'   // Correct Public Key
+          '9xGvwAjFSpdoSUtvK'
         );
-
-        console.log('EmailJS response:', response);
 
         if (response.status === 200) {
           toast({
@@ -77,14 +69,11 @@ ${formData.message}
             description: "Thank you for contacting us. We'll get back to you within 24 hours.",
           });
           
-          // Clear form
           setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
         } else {
           throw new Error(`EmailJS returned status: ${response.status}`);
         }
       } catch (emailjsError: any) {
-        console.log('EmailJS failed, using mailto fallback:', emailjsError);
-        
         if (emailjsError.text && emailjsError.text.includes('Invalid public key')) {
           toast({
             title: "EmailJS Configuration Issue",
@@ -93,16 +82,13 @@ ${formData.message}
           });
         }
         
-        // Use mailto as fallback
         sendViaMailto();
       }
       
     } catch (error: any) {
-      console.error('Contact form error:', error);
-      
       toast({
         title: "Failed to Send Message",
-        description: "Please contact us directly at washingtonowade200@gmail.com",
+        description: "Please contact us directly at info@sgbigdata.com",
         variant: "destructive",
       });
     } finally {

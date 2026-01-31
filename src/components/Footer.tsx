@@ -32,11 +32,8 @@ const Footer = () => {
 
     setIsSubscribing(true);
     try {
-      console.log('Starting newsletter subscription...');
-      
       const scriptUrl = 'https://script.google.com/macros/s/AKfycbyBEFUIBbZZzraUPXNL069pt2UYrDIbsHXj0LsjVNi8kBsujLt3DlQS8MYBgRLJMvWh/exec';
 
-      // Use no-cors mode to bypass CORS restrictions
       const params = new URLSearchParams();
       params.append('email', newsletterEmail);
 
@@ -49,10 +46,6 @@ const Footer = () => {
         body: params.toString()
       });
 
-      // Since we're using no-cors, we can't read the response
-      // But if no error is thrown, the request was sent successfully
-      console.log('Newsletter subscription request sent successfully');
-      
       toast({
         title: "Subscription Successful!",
         description: "Thank you for subscribing to our newsletter.",
@@ -60,8 +53,6 @@ const Footer = () => {
       setNewsletterEmail('');
       
     } catch (error: unknown) {
-      console.error('Newsletter subscription error:', error);
-      
       toast({
         title: "Subscription Failed",
         description: "There was an error subscribing. Please try again later.",
