@@ -97,14 +97,12 @@ function doPost(e) {
     
     // Get the next available row (skip header row)
     const lastRow = sheet.getLastRow();
-    const nextRow = lastRow < 1 ? 2 : lastRow + 1; // Start at row 2 if sheet is empty
-    const timestamp = new Date();
-    
-    Logger.log('Adding email to row: ' + nextRow);
+    const nextRow = lastRow < 1 ? 2 : lastRow + 1;
+    const timestamp = e.parameter.timestamp ? new Date(e.parameter.timestamp) : new Date();
     
     // Save to spreadsheet
     sheet.getRange(nextRow, 1).setValue(email);
-    sheet.getRange(nextRow, 2).setValue(timestamp);
+    sheet.getRange(nextRow, 2).setValue(Utilities.formatDate(timestamp, Session.getScriptTimeZone(), "yyyy-MM-dd HH:mm:ss"));
     
     Logger.log('Successfully added email to sheet');
     

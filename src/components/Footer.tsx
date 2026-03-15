@@ -36,6 +36,7 @@ const Footer = () => {
 
       const params = new URLSearchParams();
       params.append('email', newsletterEmail);
+      params.append('timestamp', new Date().toISOString());
 
       await fetch(scriptUrl, {
         method: 'POST',
